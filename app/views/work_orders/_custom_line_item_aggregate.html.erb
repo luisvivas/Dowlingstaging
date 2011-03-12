@@ -1,0 +1,67 @@
+<% form ||= false %>
+<table id="custom_aggregate" class="aggregate">
+	<tr>
+		<th>Name</th>
+		<% if form %>
+		<th>
+			<table>
+				<tr>
+					<th>For Item</th>
+					<th>Ordered</th>
+					<th>In Stock</th>
+					<th>Consumed</th>
+				</tr>
+			</table>
+		</th>
+		<% else %>
+		<th>Quantity Consumed</th>
+		<th>Needed For</th>
+		<% end %>
+	</tr>
+<% @work_order.custom_aggregate.each do |key, cli| %>
+	<tr>
+		<td><%= cli[:custom_name] %></td>
+		<% if form %>
+		<td>
+			<table>
+			<% #Loop through line items relating to this aggregate entry. Make new nested fields_for for each. Lame. %>
+			<% cli[:line_items].each do |line_item| %>
+				<%= form.fields_for(:quote_items, line_item.quote_item) do |qi| %>
+					<%= qi.fields_for(:custom_line_items, line_item) do |f| %>
+				<tr class="title">
+					<td>
+						<%= line_item.quote_item.name %>
+						<%= f.hidden_field :id %>
+						<%= qi.hidden_field :id %>
+					</td>
+					<td><%= f.check_box :ordered, :class => "ordered" %></td>
+					<td><%= f.check_box :in_stock, :class => "stocked" %></td>
+					<td><%= f.text_field :product_consumed, :class => "completion" %></td>
+				</tr>
+					<% end %>
+				<% end %>
+			<% end %>
+			<% if cli[:line_items].length > 1 %>
+				<tr>
+					<td>All</td>
+					<td><input type="checkbox" class="order_all"></td>
+					<td><input type="checkbox" class="stock_all"></td>
+				</tr>
+			<% end %>
+			</table>
+		</td>
+		<% else %>
+		<td><%= cli[:total_consumed] %></td>
+		<td><%= cli[:line_items].map{|i| i.quote_item.name + ": " + i.transit_state }.to_sentence %></td>
+		<% end %>
+	</tr>
+<% end %>
+	<% if form %>
+	<tr class="title">
+		<td colspan="7" class="right">
+			All Ordered? <input type="checkbox" class="order_all" data-all-container="#custom_aggregate">&nbsp;
+			All In Stock? <input type="checkbox" class="stock_all" data-all-container="#custom_aggregate">
+		</td>
+	</tr>
+	<% end %>
+</table>

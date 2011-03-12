@@ -1,0 +1,32 @@
+<h1><%= @correspondence.incoming? ? "Incoming" : "Outgoing" %> Correspondence about <%= link_to @correspondence.discussable.best_identifier, polymorphic_path(@correspondence.discussable) %></h1>
+<p>
+  <b>To:</b>
+  <%= format_correspondence_contact(@correspondence, :to) %>
+</p>
+
+<p>
+  <b>From:</b>
+  <%= format_correspondence_contact(@correspondence, :from) %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @correspondence.subject %>
+</p>
+
+<p>
+  <b>Attachments:</b>
+  <%= @correspondence.attachments %>
+</p>
+
+
+<p>
+  <b>Body:</b>
+  <pre><%= @correspondence.body %></pre>
+</p>
+
+
+<%= link_to "Back to " + @correspondence.discussable.best_identifier + " Correspondence", polymorphic_path([@correspondence.discussable, Correspondence.new]) %> |
+<%= link_to "Show " + @correspondence.discussable.best_identifier, polymorphic_path(@correspondence.discussable) %> | 
+<%= link_to "Edit " + @correspondence.discussable.best_identifier, edit_polymorphic_path(@correspondence.discussable) %> |
+<%= link_to "Destroy", polymorphic_path([@correspondence.discussable, @correspondence]), :confirm => destroy_confirmation(@correspondence), :method => :delete %>

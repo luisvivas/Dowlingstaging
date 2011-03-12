@@ -1,0 +1,11 @@
+<tr class="labour line_item">
+	<td class="description"><%= lli.description %></td>
+	<td class="workers"><%= lli.workers %></td>
+	<td class="location"><%= lli.shop_text %></td>
+	<td class="setup_time"><%= number_with_precision(lli.setup_time, :strip_insignificant_zeros => true) %> mins</td>
+	<td class="run_time"><%= number_with_precision(lli.run_time, :strip_insignificant_zeros => true) %> mins</td>
+	<td class="calc_time"><%= number_with_precision(lli.total_minutes, :strip_insignificant_zeros => true) %> mins</td>
+	<td class="hourly_rate"><%= number_to_currency(lli.hourly_rate) %>/hr</td>
+	<td class="markup"><%= lli.markup %>%</td>
+	<td class="total_cost"><%= number_to_currency(lli.total) %></td>
+</tr>

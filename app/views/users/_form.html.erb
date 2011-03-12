@@ -1,0 +1,41 @@
+<%= form_for(setup_addressable(@user)) do |f| %>
+	<%= f.formatted_error_messages %>
+	<div class="pane">
+		<div class="field inrow">
+			<%= f.label :first_name %><br />
+			<%= f.text_field :first_name %>
+		</div>
+		<div class="field">
+			<%= f.label :last_name %><br />
+			<%= f.text_field :last_name %>
+		</div>
+		<div class="field required">
+			<%= f.label :email %><br />
+			<%= f.text_field :email %>
+		</div>
+		<div class="field inrow">
+			<%= f.label :home_phone %><br />
+			<%= f.text_field :home_phone %>
+		</div>
+		<div class="field">
+			<%= f.label :cell_phone %><br />
+			<%= f.text_field :cell_phone %>
+		</div>
+		<div class="field">
+			<%= f.label :employee_number %><br />
+			<%= f.text_field :employee_number %>
+		</div>
+		<div class="field">
+			<%= f.label :role %><br />
+			<%= f.select :role, User.available_roles %>
+		</div>
+	</div>
+	<div class="pane">
+		<div class="pane">
+			<%= render :partial => 'addresses/form', :locals => {:f => f, :addressable => @user} %>
+		</div>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

@@ -1,0 +1,16 @@
+<tr class="labour line_item">
+	<td class="description">
+		<%= l.hidden_field :id unless l.object.new_record? %>
+		<%= l.hidden_field :_destroy, :class => "destroy_labour_line_item" %>
+		<%= l.text_field :description, :class => "line_item_description" %>
+	</td>
+	<td class="workers"><%= l.text_field :workers, :class => "line_item_workers" %></td>
+	<td class="workers"><%= l.radio_button :shop, "true", :class => "line_item_location" %> Shop <%= l.radio_button :shop, "false", :class => "line_item_location" %> Field</td>
+	<td class="setup_time"><%= l.text_field :setup_time, :class => "line_item_setup_time" %></td>
+	<td class="run_time"><%= l.text_field :run_time, :class => "line_item_run_time" %></td>
+	<td class="calc_time"></td>
+	<td class="hourly_rate"><%= l.text_field :hourly_rate, :class => "line_item_hourly_rate currency" %></td>
+	<td class="markup"><%= l.text_field :markup, :class => "line_item_markup" %>%</td>
+	<td class="total_cost"></td>
+	<td class="delete"><a href="#" class="ss_sprite ss_delete remove_labour_line_item"></a></td>
+</tr>

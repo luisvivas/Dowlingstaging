@@ -1,0 +1,30 @@
+<% links ||= true %>
+<tr class="product line_item">
+	<td class="product">
+		<% if links %>
+		<%= link_to pli.product.name_with_categories, pli.product %>
+		<% else %>
+		<%= pli.product.name_with_categories %>
+		<% end %>
+	</td>
+	<td class="product_size">
+		<%= pli.product_size.name %>
+	</td>
+	<td class="dimensions">
+		<%= pli.dimension %> <%= amount_suffix(pli.product) %>
+	</td>
+	<td class="extras">
+		<%= "Grade: " + pli.grade if pli.grade.present? %><br/>
+		<%= "Finish: " + pli.finish if pli.finish.present? %>
+	</td>
+	<td class="amount"><%= number_with_precision(pli.amount_needed, :precision => 5, :strip_insignificant_zeros => true) %> <%= amount_suffix(pli.product) %></td>
+	<td class="calc_order"><%= number_with_precision(pli.calculated_order_quantity, :precision => 5, :strip_insignificant_zeros => true) %></td>
+	<td class="real_order"><%= number_with_precision(pli.order_quantity, :precision => 5, :significant => true, :strip_insignificant_zeros => true) %></td>
+	<td class="unit_weight"><%= number_with_precision(pli.product_size.amount, :precision => 5, :strip_insignificant_zeros => true) %> lbs</td>
+	<td class="total_weight"><%= number_with_precision(pli.total_weight, :precision => 5, :strip_insignificant_zeros => true) %> lbs</td>
+	<td class="pound_cost"><%= number_to_currency(pli.cost_per_pound) %></td>
+	<td class="unit_cost"><%= number_to_currency(pli.cost_per_unit) %></td>
+	<td class="piece_cost"><%= number_to_currency(pli.cost_per_piece) %></td>
+	<td class="markup"><%= pli.markup %>%</td>
+	<td class="total_cost"><%= number_to_currency(pli.total) %></td>
+</tr>

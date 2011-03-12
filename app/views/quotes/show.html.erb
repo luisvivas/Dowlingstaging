@@ -1,0 +1,71 @@
+<h1><%= @quote.name_with_number %></h1>
+<% if @quote.contact %>
+<p>
+  <b>Contact:</b>
+  <%= link_to @quote.contact.name, @quote.contact %>
+</p>
+<% end %>
+<% if @quote.business %>
+<p>
+  <b>Business:</b>
+  <%= link_to @quote.business.name, @quote.business %>
+</p>
+<% end %>
+
+<p>
+  <b>Category:</b>
+  <%= @quote.category %>
+</p>
+
+<p>
+  <b>Employee:</b>
+  <%= link_to @quote.user.best_identifier, @quote.user %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @quote.notes %>
+</p>
+
+<p>
+  <b>SHRED Eligible?</b>
+  <%= @quote.shred %>
+</p>
+
+<p>
+  <b>Needs Installation?</b>
+  <%= @quote.needs_installation %>
+</p>
+
+<p>
+  <b>Last Printed at:</b>
+  <%= @quote.printed_at || "Never printed" %>
+</p>
+<h2>Quote Items</h2>
+<%= render :partial => 'quote_items/show', :collection => @quote.quote_items, :as => :quote_item %>
+<h2>Summary</h2>
+<table id="cost_summary" class="summary">
+	<tr>
+		<th>Item</th>
+		<th>Cost</th>
+	</tr>
+	<% @quote.quote_items.each do |quote_item| %>
+	<tr>
+		<td><%= quote_item.name %></td>
+		<td><%= number_to_currency(quote_item.total) %></td>
+	</tr>
+	<% end %>
+	<tr class="subtotal">
+		<td>Subtotal</td>
+		<td><%= number_to_currency(@quote.subtotal) %></td>
+	</tr>
+	<tr>
+		<td>Markup</td>
+		<td><%= @quote.markup %>%</td>
+	</tr>
+	<tr class="total">
+		<td>Total</td>
+		<td><%= number_to_currency(@quote.total) %></td>
+	</tr>
+</table>
+<%= render 'quotes/actions' %>

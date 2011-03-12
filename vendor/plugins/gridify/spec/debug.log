@@ -1,0 +1,1359 @@
+# Logfile created on 2010-05-10 16:14:03 -0400 by logger.rb/20321
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.8ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.0ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.0ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.8ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:14:44.919883', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:14:44.967333', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:14:45.053175', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:14:45.054820', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:14:45.059402', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:14:45.060846', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.9ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.8ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:22:46.680777', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:22:46.713869', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:22:46.761129', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:22:46.762809', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:22:46.768043', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:22:46.769741', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:24:37.654171', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:24:37.686290', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:24:37.733941', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:24:37.735602', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:24:37.740303', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:24:37.741739', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.7ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.6ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:25:02.725471', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:25:02.758516', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:25:02.803539', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:25:02.805179', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:25:02.809905', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:25:02.811389', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (3.9ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.4ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:26:09.336905', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:26:09.372280', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:26:09.416191', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:26:09.417865', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:26:09.422729', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:26:09.424188', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.6ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.3ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:26:52.161349', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:26:52.191743', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:26:52.239061', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:26:52.241089', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:26:52.248161', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:26:52.249805', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (3.0ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.6ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:27:34.163890', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:27:34.196496', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:27:34.240239', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:27:34.241904', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:27:34.246737', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:27:34.248154', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.8ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.7ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:29:54.173497', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:29:54.203634', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:29:54.247921', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:29:54.249566', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:29:54.254315', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:29:54.255732', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.0ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.4ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:30:19.582231', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:30:19.613137', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:30:19.659120', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:30:19.660937', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:30:19.666527', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:30:19.668188', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.6ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (3.6ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:30:56.910989', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:30:56.940404', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:30:56.984879', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:30:56.986556', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-10 20:30:56.991428', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-10 20:30:56.992873', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.6ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (17.2ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.4ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 19:56:14.279568', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 19:56:14.333544', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 19:56:14.405376', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 19:56:14.407125', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 19:56:14.412026', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 19:56:14.413464', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (3.0ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 19:57:20.913260', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 19:57:20.942473', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 19:57:20.988107', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 19:57:20.989817', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 19:57:20.994771', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 19:57:20.996276', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (30.9ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.4ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 20:00:34.744580', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 20:00:34.773649', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 20:00:34.818096', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 20:00:34.819722', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-11 20:00:34.824521', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-11 20:00:34.825953', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (35.6ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (3.6ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.1ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.1ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.7ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.2ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.7ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.6ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.3ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.5ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.0ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.8ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.6ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (3.3ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.9ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.5ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (4.0ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (3.1ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (3.7ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.9ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.8ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (128.6ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-12 16:35:25.544574', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-12 16:35:25.584625', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-12 16:35:25.629707', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-12 16:35:25.631358', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-12 16:35:25.636118', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-12 16:35:25.637558', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (2.4ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.9ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.8ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (6.1ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.6ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.9ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (3.0ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.6ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (1.9ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-12 16:38:44.666465', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-12 16:38:44.697171', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-12 16:38:44.743940', 'Achick')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-12 16:38:44.745675', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-05-12 16:38:44.750531', 'Achick')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-05-12 16:38:44.751998', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.7ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:04:17.916616', 'Achick')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:04:17.946266', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:04:18.056478', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:04:18.059254', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:04:18.065370', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:04:18.067651', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.2ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:05:21.882153', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:05:21.913462', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:05:21.980719', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:05:21.983060', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:05:21.989356', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:05:22.011816', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:09:09.007643', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:09:09.037062', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:09:09.087640', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:09:09.090176', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:09:09.096066', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:09:09.118002', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:09:57.159846', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:09:57.189491', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:09:57.258858', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:09:57.261349', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:09:57.277164', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:09:57.299605', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:11:44.095800', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:11:44.125188', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:11:44.174842', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:11:44.177365', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:11:44.183694', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:11:44.201976', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[36mSQL (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (1.2ms)[0m  [1mDROP TABLE "chickens"[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:14:15.982583', 'Achick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:14:16.017428', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:14:16.507010', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:14:16.510693', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:14:18.043341', 'Achick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:14:18.047334', 'Bchick')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (11.9ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:16:08.219142', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:16:08.249647', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:16:08.378787', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:16:08.381388', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:16:08.399756', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:16:08.422488', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (48.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:22:38.696893', 'Achick')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:22:38.835560', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:22:39.006273', 'Achick')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:22:39.011287', 'Bchick')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:22:39.019932', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:22:39.068513', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:28:04.490230', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:28:04.521781', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:28:04.648337', 'Achick')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:28:04.650905', 'Bchick')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:28:04.656250', 'Achick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:28:04.677695', 'Bchick')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "chickens"
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:32:08.277252', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:32:08.309791', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:32:08.440006', 'Achick')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:32:08.442710', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:32:08.448406', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:32:08.465592', 'Bchick')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:33:55.663393', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:33:55.696185', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:33:55.828326', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:33:55.831413', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:33:55.836693', 'Achick')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:33:55.839380', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:35:54.101451', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:35:54.132713', 'Bchick')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:36:30.454225', 'Achick')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:36:30.465126', 'Bchick')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:36:31.177536', 'Achick')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:36:31.181542', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:37:19.866856', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:37:19.899393', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:37:20.042914', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:37:20.045435', 'Bchick')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:37:20.052773', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:37:20.071218', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:38:16.801123', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:38:16.833095', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:38:54.151404', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:38:54.181450', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:39:23.720675', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:39:23.750837', 'Bchick')
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "chickens"[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (7.8ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:39:50.910102', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:39:50.941202', 'Bchick')
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-11 04:42:10.431067', 'Achick')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-11 04:42:10.462136', 'Bchick')
+  [1m[35mSQL (0.4ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (3.1ms)[0m  DROP TABLE "chickens"
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE TABLE "chickens" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "age" integer, "created_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chickens" ("age", "created_at", "name") VALUES (10, '2010-06-15 21:51:18.243884', 'Achick')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chickens" ("age", "created_at", "name") VALUES (20, '2010-06-15 21:51:18.279266', 'Bchick')

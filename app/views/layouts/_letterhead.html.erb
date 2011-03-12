@@ -1,0 +1,14 @@
+<div class="letterhead">
+  <%= image_tag 'logo.jpg', :class => "logo" %>
+  <table class="info">
+    <tr>
+      <td>30 Binnington Court</td><td>Phone: 613-545-9272</td>
+    </tr>
+    <tr>
+      <td>Kingston, ON K7M 8S3</td><td>Fax: 613-545-3380</td>
+    </tr>
+    <tr>
+      <td>www.dowlingmetal.com</td><td>Email: <%= letterhead_email(@user) %></td>
+    </tr>
+  </table>
+</div>

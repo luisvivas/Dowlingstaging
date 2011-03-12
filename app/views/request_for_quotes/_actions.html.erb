@@ -1,0 +1,10 @@
+<div class="actions">
+	<% list ||= false %>
+	<% rfq ||= @request_for_quote %>
+	<%= rfq.number %>: 
+	<%= permissioned_actions(rfq) do |p|
+  		p.trifecta
+		p.resources_link
+    	p.correspondence_link
+    end %>
+</div>

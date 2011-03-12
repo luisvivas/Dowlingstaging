@@ -1,0 +1,51 @@
+<% work_orders.each do |wo| %>
+<div class="queue_item <%= overdue_item_class(wo) %>">
+	<div class="due">
+		Due <%= wo.due_date.to_s(:short) %><%= " - Overdue" if wo.overdue? %>
+	</div>
+	<h4><%= wo.name_with_number %></h4>
+
+	
+	<div class="queue_box <%= wo.po_status.to_class %>">
+		PO Received
+	</div>
+	<div class="queue_box <%= wo.products_ordered_status.to_class %> <%= first_box_class(wo) %>">
+		Prods Ordered
+	</div>
+	<div class="queue_box <%= wo.products_available_status.to_class %>">
+		Prods Available
+	</div>
+	<div class="queue_box <%= wo.labour_scheduling_status.to_class %>">
+		Scheduled
+	</div>
+	<div class="queue_box <%= wo.labour_status.to_class %> <%= second_last_box_class(wo) %>">
+		Labour Completed
+	</div>
+	<% if wo.quote.needs_installation %>
+	<div class="queue_box <%= wo.installation_status.to_class %> <%= last_box_class(wo) %> last">
+		Installed
+	</div>
+	<% end %>
+	<ul class="queue_description">
+		<% unless wo.products_ordered_status == BoxStates::Complete %>
+			<li><%= wo.unordered_products.map{|k,p| p[:line_items].first.product.name }.concat(wo.unordered_custom.map{|k,p| p[:custom_name] }).uniq.to_sentence %> have not been ordered.</li>
+		<% end %>
+		<% unless wo.products_available_status == BoxStates::Complete %>
+			<li><%= wo.unavailable_products.map{|k,p| p[:line_items].first.product.name }.concat(wo.unavailable_custom.map{|k,p| p[:custom_name] }).uniq.to_sentence %> are not in stock.</li>
+		<% end %>
+		<% unless wo.po_status == BoxStates::Complete %>
+			<li>No PO has been entered from <%= link_to wo.contactable.name, wo.contactable %>.</li>
+		<% end %>
+		<% unless wo.labour_scheduling_status == BoxStates::Complete %>
+			<li>Labour for <%= wo.unscheduled_labour.map{|a| a.quote_item.name }.uniq.to_sentence %> has not been scheduled.</li>
+		<% end %>
+		<% unless wo.labour_status == BoxStates::Complete %>
+			<li>Labour for <%= wo.incomplete_labour.map{|a| a.quote_item.name }.uniq.to_sentence %> has not been completed.</li>
+		<% end %>
+		<% unless wo.installation_status == BoxStates::Complete %>
+			<li>Work Order is marked for installation but installation has not been completed.</li>
+		<% end %>
+	</ul>
+	<%= render 'work_orders/actions', :work_order => wo %>
+</div>
+<% end %>

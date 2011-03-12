@@ -1,0 +1,31 @@
+<%= f.fields_for :scope_of_works do |s| %>
+<div class="scope_of_work">
+	<div class="window">
+		<div class="pane">
+		<h3>Bidder <%= link_to s.object.bidder.name, s.object.bidder %></h3>
+		<%= s.text_field :id, :class => "hide" %>
+		<%= s.text_field :contact_id, :class => "hide" %>
+		</div>
+		<div class="pane">
+			<%= render :partial => "scope_of_works/actions", :locals => {:scope_of_work => s.object} %>
+		</div>
+	</div>
+	<div class="window">
+		<div class="pane">
+			<div class="field">
+				<%= s.label :items %><br />
+				<%= render :partial => "scope_items/form", :locals => {:f => s} %>
+				<a href="#add_item" class="add_item ss_sprite ss_add" data-scope-of-work-id="<%= f.instance_variable_get(:@nested_child_index)["request_for_quote[scope_of_works_attributes]"] %>">Add Item</a>
+			</div>
+		</div>
+		<div class="pane">
+			<div class="field">
+				<%= s.label :notes, "Scope of Work Notes" %><br />
+				<%= s.text_area :notes, :rows => 0, :cols => 0 %>
+			</div>
+		</div>
+	</div>
+</div>
+<br/>
+<hr/>
+<% end %>

@@ -1,0 +1,11 @@
+<% mode ||= :standard
+if mode != :aggregate %>
+<td><%= number_to_currency(li.internal_total_cost) %></td>
+<td><%= number_to_currency(li.total) %> (<%= li.markup %>% markup)</td>
+<td class="<%= profit_class(li.profit) %>"><%= number_to_currency(li.profit) %></td>
+<% else 
+profit = li[:internal_total_revenue] - li[:internal_total_cost] %>
+<td><%= number_to_currency(li[:internal_total_cost]) %></td>
+<td><%= number_to_currency(li[:internal_total_revenue]) %></td>
+<td class="<%= profit_class(profit) %>"><%= number_to_currency(profit) %></td>
+<% end %>

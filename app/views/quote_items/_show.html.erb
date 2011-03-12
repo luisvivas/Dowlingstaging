@@ -1,0 +1,96 @@
+<div class="quote_item">
+	<h3><%= quote_item.name %></h3>
+	<div class="clear"></div>
+	<div class="accordion">
+		<h5><a href="#">Products</a></h5>
+		<div>
+			<table class="product_line_items line_items stripeMe">
+				<tr>
+					<th class="product">Product</th>
+					<th class="product_size">Size</th>
+					<th class="dimensions">Dimensions</th>
+					<th class="extras">Extras</th>
+					<th class="amount">Amount Needed</th>
+					<th class="calc_order">Calc Order Qty</th>
+					<th class="real_order">Real Order Qty</th>
+					<th class="unit_weight">Weight / Unit</th>
+					<th class="total_weight">Total Weight</th>
+					<th class="pound_cost">Cost / Pound</th>
+					<th class="unit_cost">Cost / Unit</th>
+					<th class="piece_cost">Cost / Piece</th>
+					<th class="markup">Markup</th>
+					<th class="total_cost">Calc Total Cost</th>
+				</tr>
+				<%= render :partial => "product_line_items/show", :collection => quote_item.product_line_items, :as => :pli %>
+			</table>
+		</div>
+		<h5><a href="#">Labour</a></h5>
+		<div>
+			<table class="labour_line_items line_items stripeMe">
+				<tr>
+					<th class="description">Description</th>
+					<th class="workers">Quantity</th>
+					<th class="location">Location</th>
+					<th class="setup_time">Setup Time</th>
+					<th class="run_time">Run Time</th>
+					<th class="calc_order">Calc Total Time</th>
+					<th class="hourly_rate">Hourly Rate</th>
+					<th class="markup">Markup</th>
+					<th class="total_cost">Calc Total Cost</th>
+				</tr>
+				<%= render :partial => 'labour_line_items/show', :collection => quote_item.labour_line_items, :as => :lli %>
+			</table>
+		</div>
+		<h5><a href="#">Custom</a></h5>
+		<div>
+			<table class="custom_line_items line_items stripeMe">
+				<tr>
+					<th class="product">Custom Name</th>
+					<th class="real_order">Real Order Qty</th>
+					<th class="piece_cost">Cost / Piece</th>
+					<th class="markup">Markup</th>
+					<th class="total_cost">Calc Total Cost</th>
+				</tr>
+				<%= render :partial => 'custom_line_items/show', :collection => quote_item.custom_line_items, :as => :cli %>
+			</table>
+		</div>
+	</div>
+	<br/>
+	<div class="pane">
+			<table class="summary">
+			<tr>
+				<td>Products subtotal</td>
+				<td class="quote_item_products_subtotal"><%= number_to_currency(quote_item.products_subtotal) %></td>
+			</tr>
+			<tr>
+				<td>Labour subtotal</td>
+				<td class="quote_item_labour_subtotal"><%= number_to_currency(quote_item.labour_subtotal) %></td>
+			</tr>
+			<tr>
+				<td>Custom subtotal</td>
+				<td class="quote_item_custom_subtotal"><%= number_to_currency(quote_item.custom_subtotal) %></td>
+			</tr>
+			<tr>
+				<td>Hardware Markup</td>
+				<td class="hardware_markup"><%= quote_item.hardware_markup %>%</td>
+			</tr>
+			<tr>
+				<td>Item Subtotal</td>
+				<td class="quote_item_subtotal"><%= number_to_currency(quote_item.subtotal) %></td>
+			</tr>
+			<tr>
+				<td>Item Markup</td>
+				<td class="markup"><%= quote_item.markup %>%</td>
+			</tr>
+			<tr class="total">
+				<td><strong>Item Total</strong></td>
+				<td class="quote_item_total"><%= number_to_currency(quote_item.total) %></td>
+			</tr>
+		</table>
+	</div>
+	<div class="pane">
+		<b>Notes:</b><br/>
+		<%= quote_item.notes %>
+	</div>
+</div>
+<div class="clear"></div>

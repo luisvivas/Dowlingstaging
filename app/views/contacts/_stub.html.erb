@@ -1,0 +1,8 @@
+<ul class="contact stub">
+  <li class="name"><b><%= contact.name %></b><span class="small">&nbsp;&nbsp;<%= contact.department %></span></li>
+  <li class="telephone"><%= "Telephone: " if contact.more_than_one_phone? %><%= contact.telephone %></li>
+  <li class="mobile"><%= "Mobile: " if contact.more_than_one_phone? %><%= contact.mobile %></li>
+  <li class="Fax"><%= "Fax: " if contact.more_than_one_phone? %><%= contact.fax %></li>
+  <li class="email"><%= contact.email %></li>
+  <li class="address"><%= contact.address if contact.address %>
+</ul>

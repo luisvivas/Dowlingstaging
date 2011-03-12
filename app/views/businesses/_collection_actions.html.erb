@@ -1,0 +1,6 @@
+<div class="actions">
+	<%= permissioned_actions_from_array [
+		["Show All", businesses_path, :show, :business],
+		["New Business", new_business_path, :create, :business]
+	] %>
+</div>

@@ -1,0 +1,70 @@
+<% options ||= {} %>
+<% item ||= nil %>
+<%= f.fields_for :quote_items, item, options do |i| %>
+	<div class="quote_item">
+		<div class="edit_quote_item">
+			<%= i.hidden_field :id %>
+			<%= i.hidden_field :_destroy, :class => "destroy_quote_item" %>
+			<div class="field">
+				<%= i.text_field :name, :class => "header" %>	<a href="#remove-quote-item" class="ss_sprite ss_delete remove_quote_item">Remove</a>
+			</div>
+			<br />
+			<div class="clear"></div>
+			<div class="accordion">
+				<h5><a href="#">Products</a></h5>
+				<div>
+					<%= render :partial => "product_line_items/form", :locals => {:i => i, :category_roots => category_roots} %>
+				</div>
+				<h5><a href="#">Labour</a></h5>
+				<div>
+					<%= render :partial => "labour_line_items/form", :locals => {:i => i} %>
+				</div>
+				<h5><a href="#">Custom</a></h5>
+				<div>
+					<%= render :partial => "custom_line_items/form", :locals => {:i => i} %>
+				</div>
+			</div>
+			<br/>
+			<div class="pane">
+			<table class="summary">
+				<tr>
+					<td>Products subtotal</td>
+					<td class="quote_item_products_subtotal"></td>
+				</tr>
+				<tr>
+					<td>Labour subtotal</td>
+					<td class="quote_item_labour_subtotal"></td>
+				</tr>
+				<tr>
+					<td>Custom subtotal</td>
+					<td class="quote_item_custom_subtotal"></td>
+				</tr>
+				<tr>
+					<td>Hardware Markup</td>
+					<td class="hardware_markup"><%= i.text_field :hardware_markup %>%</td>
+				</tr>
+				<tr>
+					<td>Item Subtotal</td>
+					<td class="quote_item_subtotal"></td>
+				</tr>
+				<tr>
+					<td><%= i.label :markup, "Item Markup" %></td>
+					<td class="markup"><%= i.text_field :markup %>%</td>
+				</tr>
+				<tr class="total">
+					<td><strong>Item Total</strong></td>
+					<td class="quote_item_total"></td>
+				</tr>
+			</table>
+			</div>
+			<div class="pane field">
+				<%= i.label :notes, "Quote Item Notes" %><br />
+				<%= i.text_area :notes, :rows => 0, :cols => 0 %>
+			</div>
+		</div>
+		<div class="deleted_quote_item" style="display: none;">
+			<a href="#remove-quote-item" class="remove_quote_item undelete">Undelete Item</a>
+		</div>
+		<br />
+	</div>
+<% end %>

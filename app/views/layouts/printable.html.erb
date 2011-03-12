@@ -1,0 +1,14 @@
+<%= render 'layouts/head' %>
+  <body class="bp two-col">
+		<div id="container" class="container">
+      <div class="letterhead">
+        <%= image_tag 'logo.jpg', :class => "logo" %>
+      </div>
+      <%= yield %>
+			<div id="container-footer-push"></div>
+		</div>
+		<div id="footer">
+			Generated at <%= Time.now.to_s %>
+	  </div>
+  </body>
+</html>

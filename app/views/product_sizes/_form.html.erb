@@ -1,0 +1,22 @@
+<% options ||= {} %>
+<%= f.fields_for :sizes, options do |a| %>
+	<div class="size">
+		<span class="size_form">
+		<div class="field inrow required size_name">
+			<%= a.label :name %><br />
+			<%= a.text_field :name %>
+		</div>
+		<div class="field inrow required size_cost">
+			<%= a.label :amount, "Weight", :class => "product_amount_title" %><br />
+			<%= a.text_field :amount %>
+			<span class="product_amount_suffix">lbs</span>
+		</div>
+		<%= a.hidden_field :_destroy, :class => "destroy_size" %>
+		</span>
+		<% if a.object.destroyable? %>
+		<a href="#delete_size" class="delete_size ss_sprite ss_delete">Delete</a>
+		<% else %>
+		<span class="disabled undeletable_size">Can't <a href="#" class="tooltip" title="<%= a.object.referencing_quote_items.to_sentence %> reference(s) this product size.">why?</a></span>
+		<% end %>
+	</div>
+<% end %>

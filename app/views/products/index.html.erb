@@ -1,0 +1,11 @@
+<h1>Listing Products</h1>
+
+<% content_for :head do %>
+	<%= raw product_index_grid %>
+<% end %>
+
+<table id="products_grid"></table>
+<div id="products_grid_pager"></div>
+<br />
+
+<%= render 'products/collection_actions' %>

@@ -1,0 +1,6 @@
+<h4>Child Categories</h4>
+<ul>
+<% @product_category.children.each do |category| %>
+	<li><%= link_to category.name, product_category_path(category) %></li>
+<% end %>
+</ul>

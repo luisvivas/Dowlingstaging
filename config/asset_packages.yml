@@ -1,0 +1,61 @@
+--- 
+javascripts: 
+- base: 
+  - jquery-1.4.2
+  - jquery-ui-1.8.2.grey
+  - rails
+  - jquery.togglebox
+  - jquery.tiptip
+  - jqgrid/src/i18n/grid.locale-en
+  - jqgrid/src/grid.base
+  - jqgrid/src/grid.common
+  - jqgrid/src/grid.custom
+  - jqgrid/src/grid.formedit
+  - jqgrid/src/grid.inlinedit
+  - jqgrid/src/grid.celledit
+  - jqgrid/src/grid.subgrid
+  - jqgrid/src/grid.treegrid
+  - jqgrid/src/grid.custom
+  - jqgrid/src/grid.postext
+  - jqgrid/src/grid.tbltogrid
+  - jqgrid/src/grid.setcolumns
+  - jqgrid/src/grid.import
+  - jqgrid/src/grid.jqueryui
+  - jqgrid/src/jquery.fmatter
+  - jqgrid/src/JsonXml
+  - jqgrid/src/jqDnR
+  - jqgrid/src/jqModal
+  - jqgrid/src/ui.multiselect
+  - jqgrid/src/jquery.searchFilter
+  - jquery.formatcurrency
+  - jquery.enumerable
+  - jquery.chainedselect
+  - jquery.autocomplete
+  - application
+  - modules/dashboard
+  - modules/businesses
+  - modules/contacts
+  - modules/product_categories
+  - modules/products
+  - modules/quotes
+  - modules/request_for_quotes
+  - modules/users
+  - modules/work_orders
+  - modules/reports
+
+stylesheets:
+- application_pkg:
+  - jquery-ui-1.8.2.custom
+  - application
+- screen_pkg:
+  - screen
+  - buttons
+  - tiptip
+  - jquery.autocomplete
+  - sprite
+  - ui.jqgrid
+- print_pkg: 
+  - print
+  - application_print
+- ie: 
+  - ie

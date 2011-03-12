@@ -1,0 +1,18 @@
+<table class="labour_line_items line_items stripeMe">
+	<tr>
+		<th class="description">Description</th>
+		<th class="workers">Quantity</th>
+		<th class="location">Location</th>
+		<th class="setup_time">Setup Time (mins)</th>
+		<th class="run_time">Run Time (mins)</th>
+		<th class="calc_order">Calc Total Time (hours)</th>
+		<th class="hourly_rate">Hourly Rate</th>
+		<th class="markup">Markup</th>
+		<th class="total_cost">Calc Total Cost</th>
+		<th>&nbsp;</th>
+	</tr>
+<%= i.fields_for(:labour_line_items) do |l| %>
+	<%= render :partial => 'labour_line_items/line_item', :locals => {:l => l} %>
+<% end %>
+</table>
+<a href="#add-labour-line-item" class="ss_sprite ss_add add_labour_line_item">Add Labour</a>

@@ -1,0 +1,11 @@
+<div class="actions">
+	<% business ||= @business %>
+	<%= business.name %>: 
+	<%= permissioned_actions_from_array([
+		["Show", business, :show],
+		["Show Contacts", business_contacts_path(business), :show, :contact],
+		['Show All', businesses_path, :show, :business],
+		['Edit', edit_business_path(business), :update, business],
+		['New Contact within '+business.name, new_business_contact_path(business), :create, Contact.new(:business => business)]
+	]) %>
+</div>

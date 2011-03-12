@@ -1,0 +1,118 @@
+/* line 1, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+/* line 7, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_top {
+  padding-bottom: 5px;
+}
+/* line 9, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_bottom {
+  padding-top: 5px;
+}
+/* line 11, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_right {
+  padding-left: 5px;
+}
+/* line 13, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_left {
+  padding-right: 5px;
+}
+
+/* line 16, ../../app/stylesheets/tiptip.sass */
+#tiptip_content {
+  font-size: 11px;
+  color: white;
+  text-shadow: 0 0 2px black;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #191919;
+  background-color: rgba(25, 25, 25, 0.92);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(black));
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  box-shadow: 0 0 3px #555555;
+  -webkit-box-shadow: 0 0 3px #555555;
+  -moz-box-shadow: 0 0 3px #555555;
+}
+
+/* line 32, ../../app/stylesheets/tiptip.sass */
+#tiptip_arrow, #tiptip_arrow_inner {
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 6px;
+  height: 0;
+  width: 0;
+}
+
+/* line 41, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_top #tiptip_arrow {
+  border-top-color: white;
+  border-top-color: rgba(255, 255, 255, 0.35);
+}
+/* line 44, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_bottom #tiptip_arrow {
+  border-bottom-color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.35);
+}
+/* line 47, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_right #tiptip_arrow {
+  border-right-color: white;
+  border-right-color: rgba(255, 255, 255, 0.35);
+}
+/* line 50, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_left #tiptip_arrow {
+  border-left-color: white;
+  border-left-color: rgba(255, 255, 255, 0.35);
+}
+/* line 53, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_top #tiptip_arrow_inner {
+  margin-top: -7px;
+  margin-left: -6px;
+  border-top-color: #191919;
+  border-top-color: rgba(25, 25, 25, 0.92);
+}
+/* line 58, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_bottom #tiptip_arrow_inner {
+  margin-top: -5px;
+  margin-left: -6px;
+  border-bottom-color: #191919;
+  border-bottom-color: rgba(25, 25, 25, 0.92);
+}
+/* line 63, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_right #tiptip_arrow_inner {
+  margin-top: -6px;
+  margin-left: -5px;
+  border-right-color: #191919;
+  border-right-color: rgba(25, 25, 25, 0.92);
+}
+/* line 68, ../../app/stylesheets/tiptip.sass */
+#tiptip_holder.tip_left #tiptip_arrow_inner {
+  margin-top: -6px;
+  margin-left: -7px;
+  border-left-color: #191919;
+  border-left-color: rgba(25, 25, 25, 0.92);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  /* line 75, ../../app/stylesheets/tiptip.sass */
+  #tiptip_content {
+    padding: 4px 8px 5px 8px;
+    background-color: rgba(45, 45, 45, 0.88);
+  }
+
+  /* line 79, ../../app/stylesheets/tiptip.sass */
+  #tiptip_holder.tip_bottom #tiptip_arrow_inner {
+    border-bottom-color: rgba(45, 45, 45, 0.88);
+  }
+  /* line 81, ../../app/stylesheets/tiptip.sass */
+  #tiptip_holder.tip_top #tiptip_arrow_inner {
+    border-top-color: rgba(20, 20, 20, 0.92);
+  }
+}

@@ -1,0 +1,8 @@
+<div class="actions">
+	<% contact ||= @contact %>
+	<%= contact.name %>: 
+	<%= permissioned_actions(contact) do |p|
+  			p.trifecta
+	  		p.link("Show #{contact.business.name}", contact.business, :show) if contact.business.present?
+    end %>
+</div>

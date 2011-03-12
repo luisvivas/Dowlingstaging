@@ -1,0 +1,2 @@
+module TimeReportsHelper
+end

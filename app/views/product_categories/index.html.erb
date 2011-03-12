@@ -1,0 +1,16 @@
+<h1>Listing Product Categories</h1>
+
+<table class="stripeMe">
+  <tr>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+
+<% @product_categories.to_a.select {|cat| cat.ancestors_count == 0}.each do |product_category| %>
+	<%= render :partial => 'product_categories/tablerow', :locals => {:product_category => product_category} %>
+<% end %>
+</table>
+
+<br />
+
+<%= render 'product_categories/collection_actions' %>

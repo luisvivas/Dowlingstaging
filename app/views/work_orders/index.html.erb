@@ -1,0 +1,10 @@
+<h1>Listing Work Orders</h1>
+
+<% content_for :head do %>
+	<%= raw work_order_index_grid %>
+<% end %>
+
+<table id="work_orders_grid"></table>
+<div id="work_orders_grid_pager"></div>
+
+<%= render 'work_orders/collection_actions' %>

@@ -1,0 +1,33 @@
+<%= form_for(@work_order) do |f| %>
+  <%= f.formatted_error_messages %>
+<div class="pane">
+  <div class="fullrow field">
+    <%= f.label :quote_id %>: <%= link_to f.object.quote.name_with_number, f.object.quote %>
+  </div>
+  <div class="field">
+    <%= f.label :due_date %><br />
+    <%= f.datetime_select :due_date %>
+  </div>
+  <div class="field">
+    <%= f.label :po_number, "PO Number" %><br />
+    <%= f.text_field :po_number, :class => "tooltip", :title => "Once a PO number has been entered for this work order, the listed items will no longer be editable." %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update Work Order" %>
+  </div>
+</div>
+<%= f.fields_for(:quote) do |q| %>
+<div class="window">
+	<h2>Materials</h2>
+	<%= render 'work_orders/product_line_item_aggregate', :form => q %>
+	<h2>Labour</h2>
+	<%= render 'work_orders/labour_line_item_aggregate', :form => q %>
+	<h2>Custom</h2>
+	<%= render 'work_orders/custom_line_item_aggregate', :form => q %>
+</div>
+<% end %>
+<div class="actions">
+  <%= f.submit "Update Work Order" %>
+</div>
+<% end %>
+<%= render 'work_orders/actions' %>

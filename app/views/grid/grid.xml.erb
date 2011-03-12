@@ -1,0 +1,17 @@
+<%
+  if self.respond_to?(@format_method_name) # Format the grid as defined in the helper if it exists
+    self.send(@format_method_name)
+  else
+    logger.info "Grid not being formatted, this is probably by accident!"
+  end
+  # Find records for display
+  @subset = @model.gridified(@grid_sym, params)
+  @subset = @subset.find_for_grid(@grid_sym, params)
+  # Find count of total records
+  if @model.respond_to?(:count_for_grid)
+    @count = @model.count_for_grid(@grid_sym, params).count
+  else
+    records = @model.find_for_grid(@grid_sym, params)
+    @count = records.count
+  end
+%><%=raw @grid.encode_records(@subset, @count) %>

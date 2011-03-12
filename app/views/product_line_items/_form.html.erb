@@ -1,0 +1,23 @@
+<table class="product_line_items line_items stripeMe">
+	<tr>
+		<th class="product">Product</th>
+		<th class="product_size">Size</th>
+		<th class="dimensions">Dimensions</th>
+		<th class="extras">Extras</th>
+		<th class="amount">Amount Needed</th>
+		<th class="calc_order">Calc Order Qty</th>
+		<th class="real_order">Real Order Qty</th>
+		<th class="unit_weight">Weight / Unit</th>
+		<th class="total_weight">Total Weight</th>
+		<th class="pound_cost">Cost / Pound</th>
+		<th class="unit_cost">Cost / Unit</th>
+		<th class="piece_cost">Cost / Piece</th>
+		<th class="markup">Markup</th>
+		<th class="total_cost">Calc Total Cost</th>
+		<th>&nbsp;</th>
+	</tr>
+<%= i.fields_for(:product_line_items) do |l| %>
+	<%= render :partial => 'product_line_items/line_item', :locals => {:l => l, :category_roots => category_roots} %>
+<% end %>
+</table>
+<a href="#add-product-line-item" class="ss_sprite ss_add add_product_line_item">Add Product</a>

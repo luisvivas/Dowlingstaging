@@ -1,0 +1,40 @@
+<tr class="product line_item">
+	<td class="product">
+		<%= l.hidden_field :id unless l.object.new_record? %>
+		<%= l.hidden_field :_destroy, :class => "destroy_product_line_item" %>
+		
+		<%= l.hidden_field :product_id, :class => "line_item_product_id" %>
+		<% l.object.product ||= Product.first %>
+		<%= select_tag("product_root_categories", options_from_collection_for_select_with_data(category_roots, :id, :name, :cost_per_pound, l.object.product.category.parent.id), :id => nil) %>
+		<%= select_tag("product_child_categories", options_from_collection_for_select(l.object.product.category.parent.children, :id, :name, l.object.product.category.id), :id => nil) %>
+		<%= select_tag("product_name", options_from_collection_for_select_with_data(l.object.product.category.products, :id, :name, [:type, :grade, :finish], l.object.product.id), :id => nil) %>
+	</td>
+	<td class="product_size">
+		<%= select_tag("product_size", options_from_collection_for_select_with_data(l.object.product.sizes, :id, :name, :amount, l.object.product_size_id), :id => nil) %>
+		<%= l.hidden_field :product_size_id, :class => "line_item_product_size_id" %>
+	</td>
+	<td class="dimensions">
+		<%= select_tag("sheet_product_dimensions", options_for_select(SheetProduct.available_dimensions, l.object.dimension_decimal), :class => "dimension_select", "data-suffix" => amount_suffix(SheetProduct)) %>
+		<%= select_tag("length_product_dimensions", options_for_select(LengthProduct.available_dimensions, l.object.dimension_decimal), :class => "dimension_select", "data-suffix" => amount_suffix(LengthProduct)) %>
+		<%= select_tag("unit_product_dimensions", options_for_select(UnitProduct.available_dimensions, l.object.dimension_decimal), :class => "dimension_select hide", "data-suffix" => amount_suffix(UnitProduct)) %>
+		<%= text_field_tag :irregular_dimension, l.object.dimension, :class => "dimension_select" %>
+		<span class="amount_suffix"></span>
+		<a href="#irregular_dimension" class="small">irregular</a>
+		<%= l.hidden_field :dimension, :class => "line_item_dimension" %>
+	</td>
+	<td class="extras">
+		<%= l.select :grade, Product.available_grades, {:prompt => "-- Grade -- "}, :class => "line_item_grade" %>
+		<%= l.select :finish, Product.available_finishes, {:prompt => "-- Finish -- "}, :class => "line_item_finish" %>
+	</td>
+	<td class="amount"><%= l.text_field :amount_needed, :class => "line_item_amount_needed" %>&nbsp;<span class="amount_suffix"></span></td>
+	<td class="calc_order"></td>
+	<td class="real_order"><%= l.text_field :order_quantity, :class => "line_item_real_order_quantity" %></td>
+	<td class="unit_weight"></td>
+	<td class="total_weight"></td>
+	<td class="pound_cost"><%= l.text_field :cost_per_pound, :class => "line_item_cost_per_pound long_currency" %></td>
+	<td class="unit_cost"></td>
+	<td class="piece_cost"></td>
+	<td class="markup"><%= l.text_field :markup, :class => "line_item_markup" %>%</td>
+	<td class="total_cost"></td>
+	<td class="delete"><a href="#" class="ss_sprite ss_delete remove_product_line_item"></a></td>
+</tr>

@@ -1,0 +1,4 @@
+<%= form_for(@quote, :html => {:id => "quote_item_form_template" , :class => "hide"}) do |f| %>
+<% item = setup_quote_item(@quote.quote_items.build) %>
+<%= render :partial => 'quote_items/form', :locals => {:f => f, :item => item, :category_roots => category_roots, :options => {:child_index => "NEW_RECORD"}} %>
+<% end %>

@@ -1,0 +1,134 @@
+<% unless @quote.new_record? %>
+	<div class="pane right">
+		<h2>Job Resources</h2>
+			<%= render :partial => "job_resources/widget", :locals => {:attachable => @quote, :form => true } %>
+	</div>
+<% end %>
+<script type="text/javascript" charset="utf-8">
+	var DEFAULT_SHEET_PRODUCT_DIMENSION = "<%= Settings.default_sheet_product_dimension %>";
+	var DEFAULT_LENGTH_PRODUCT_DIMENSION = "<%= Settings.default_length_product_dimension %>";
+</script>
+
+<%= form_for(@quote, :html => {:class => "in_play"}) do |f| %>	
+	<div class="pane">
+		<%= f.formatted_error_messages %>
+		
+		<div class="field">
+			<%= f.label :job_name %><br />
+			<%= f.text_field :job_name %>
+		</div>
+		<div class="field">
+			<%= f.label :auto_business_name, "Business" %>
+			<%= f.hidden_field :business_id %>
+			<%= quote_business_autocomplete(f.object) %>
+		</div>
+		<div class="field">
+			<%= f.label :auto_contact_name, "Contact" %>
+			<%= f.hidden_field :contact_id %>
+			<%= quote_contact_autocomplete(f.object) %>
+		</div>
+		<div class="field inrow">
+			<%= f.label :category %><br />
+			<%= f.text_field :category %>
+		</div>
+		<div class="field inrow">
+			<%= f.label :shred, "SHRED Eligibility" %><br />
+			<%= f.check_box :shred %>
+		</div>
+		<div class="field inrow">
+			<%= f.label :needs_installation, "Needs Installation?" %><br />
+			<%= f.check_box :needs_installation %>
+		</div>
+		<div class="field">
+			<%= f.label :user %><br />
+			<%= link_to @quote.user.best_identifier, @quote.user %>
+			<%= f.hidden_field :user_id %>
+		</div>
+		<div class="field">
+			<%= f.label :notes %><br />
+			<%= f.text_area :notes %>
+		</div>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	<div class="window">
+		<h2>Quote Items</h2>
+		<div class="actions">
+			<a href="#add-quote-item" class="ss_sprite ss_add add_quote_item">Add Quote Item</a>
+		</div>
+
+		<div id="quote_items_container">
+			<%= render :partial => "quote_items/form", :locals => {:f => f, :category_roots => @category_roots} %>
+		</div>
+	
+		<% if f.object.quote_items.count > 1 %>
+		<div class="actions">
+			<a href="#add-quote-item" class="ss_sprite ss_add add_quote_item">Add Quote Item</a>
+		</div>
+		<% end %>
+	
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	<div class="window">
+		<h3>Materials Summary</h3>
+		<table id="materials_summary">
+			<tr>
+				<th>Product</th>
+				<th>Size</th>
+				<th>Dimension</th>
+				<th>Amount Needed</th>
+				<th>Order Quantity</th>
+				<th>Order Weight</th>
+				<th>Calc Cost</th>
+				<th>Requiring Items</th>
+			</tr>
+		</table>
+		<h3>Labour Summary</h3>
+		<table id="labour_summary">
+			<tr>
+				<th>Hours</th>
+				<th>Wage</th>
+				<th>Calc Cost</th>
+				<th>Requiring Items</th>
+			</tr>
+		</table>
+		<h3>Custom Summary</h3>
+		<table id="custom_summary">
+			<tr>
+				<th>Name</th>
+				<th>Quantity</th>
+				<th>Cost / Piece</th>
+				<th>Calc Total</th>
+				<th>Requiring Items</th>
+			</tr>
+		</table>
+		<h3>Cost Summary</h3>
+		<table id="cost_summary" class="summary">
+			<tr>
+				<th>Item</th>
+				<th>Cost</th>
+			</tr>
+			<tr class="subtotal">
+				<td>Subtotal</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><%= f.label :markup %></td>
+				<td><%= f.text_field :markup, :id => "quote_markup" %>%</td>
+			</tr>
+			<tr class="total">
+				<td>Total</td>
+				<td><%= text_field_tag :quote_total_cost %></td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
+<%= render 'quote_items/form_template', :category_roots => @category_roots %>
+<%= render 'product_line_items/form_template', :category_roots => @category_roots %>

@@ -1,0 +1,23 @@
+/* line 1, ../../app/stylesheets/application_print.sass */
+body {
+  height: 100%;
+  min-height: 100%;
+  width: 100% !important;
+}
+
+/* line 5, ../../app/stylesheets/application_print.sass */
+.window {
+  width: 100% !important;
+}
+
+/* line 7, ../../app/stylesheets/application_print.sass */
+.pane {
+  float: left;
+  width: 50% !important;
+  margin-right: 0px !important;
+}
+
+/* line 11, ../../app/stylesheets/application_print.sass */
+#footer {
+  float: bottom;
+}

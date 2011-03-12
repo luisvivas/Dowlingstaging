@@ -1,0 +1,23 @@
+<h3>Scope for <%= scope_of_work.bidder.name %></h3>
+<div class="pane">
+<table>
+	<tr>
+		<th>Item</th>
+		<th>Notes</th>
+	</tr>
+	<% scope_of_work.scope_items.each do |item| %>
+	<tr>
+		<td><%= item.name %></td>
+		<td><%= item.notes %></td>
+	</tr>
+	<% end %>
+</table>
+</div>
+<div class="pane">
+	<%= render :partial => "scope_of_works/actions", :locals => {:scope_of_work => scope_of_work} %>
+	<p>
+		<b>Scope Notes: </b>
+		<%= scope_of_work.notes %>
+	</p>
+</div>
+<hr>

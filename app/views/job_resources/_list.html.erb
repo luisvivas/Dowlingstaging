@@ -1,0 +1,17 @@
+<% JobResource.categories.each do |t| %>
+  <% in_cat = resources.reject {|r| r.category != t} %>
+  <% if in_cat.length > 0 %>
+    <h3><%= t %></h3>
+    <ul class="resource_list">
+    <% in_cat.each do |r| %>
+      <li>
+      <% if r.image? %>
+        <%= link_to image_tag(r.resource.url(:thumb)), r.resource.url %><br/>
+      <% end %>
+        <%= resource_icon_link(r) %>
+        <%= link_to "Destroy", job_resource_path(r), :confirm => destroy_confirmation(r), :method => :delete, :class => "small" if current_user.can_destroy?(r) %>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>

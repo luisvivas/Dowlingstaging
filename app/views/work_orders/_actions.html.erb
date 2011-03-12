@@ -1,0 +1,13 @@
+<div class="actions">	
+	<% work_order ||= @work_order %>
+	<%= work_order.number %>: 
+	<%= permissioned_actions(work_order) do |p|
+  		p.trifecta
+			p.link('Printable', printable_work_order_path(work_order), :show, work_order)
+		p.link 'Quote', work_order.quote, :show
+		p.link 'Edit Quote', edit_quote_path(work_order.quote), :update, work_order.quote
+  		p.correspondence_link
+  		p.link("Resources", quote_job_resources_path(work_order.id), :show, :job_resource)
+  		p.text link_to_google_schedule(work_order), :show, work_order
+    end %>
+</div>

@@ -1,0 +1,42 @@
+<% rfqs.each do |rfq| %>
+<div class="queue_item <%= overdue_item_class(rfq) %>">
+	<div class="due">
+		Due <%= rfq.due_date.to_s(:short) %><%= " - Overdue" if rfq.overdue? %>
+	</div>
+	<h4><%= rfq.number_and_name %></h4>
+	<div class="queue_box <%= rfq.bidders_added_status.to_class %>">
+		Bidders Added
+	</div>
+	<div class="queue_box <%= rfq.scope_of_works_created_status.to_class %>">
+		Scope Of Works Detailed
+	</div>
+	<div class="queue_box <%= rfq.quotes_generated_status.to_class %>">
+		Quotes Generated
+	</div>
+	<div class="queue_box <%= rfq.quotes_sent_status.to_class %> last">
+		Quotes Sent
+	</div>
+	<ul class="queue_description">
+		<% if rfq.bidders_added_status.complete? %>
+			<% unless rfq.scope_of_works_created_status.complete? %>
+				<% rfq.itemless_scopes.each do |s| %>
+					<li>Scope <%= scope_identifier_link(s) %> has no items outlined.</li>
+				<% end %>
+			<% end%>
+			<% unless rfq.quotes_generated_status.complete? %>
+				<% rfq.quoteless_scopes.each do |s| %>
+					<li>Scope <%= scope_identifier_link(s) %> has no quotes generated.</li>
+				<% end %>
+			<% end %>
+			<% unless rfq.quotes_sent_status.complete? %>
+				<% rfq.unprinted_quotes.each do |q| %>
+					<li>Quote <%= link_to q.number, q %> for <%= link_to q.contactable.name, q.contactable %> has never been printed.</li>
+				<% end %>
+			<% end %>
+		<% else %>
+			<li>RFQ has no bidders to create quotes for.</li>
+		<% end %>
+	</ul>
+	<%= render 'request_for_quotes/actions', :rfq => rfq %>
+</div>
+<% end %>

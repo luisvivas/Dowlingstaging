@@ -1,0 +1,6 @@
+<div class="actions">
+	<%= permissioned_actions_from_array [
+		["Show All", contacts_path, :show, :contact],
+		["New Contact", new_contact_path, :create, :contact]
+	] %>
+</div>

@@ -1,0 +1,5 @@
+<ul class="activity_list">
+<% correspondences.each do |c| %>
+	<li><%= who_sent_what(c) %> about <%= link_to_discussable c %></li>
+<% end %>
+</ul>

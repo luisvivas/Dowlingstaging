@@ -1,0 +1,131 @@
+<h1><%= @work_order.name_with_number %></h1>
+<p>
+  <b>Complete:</b>
+  <%= @work_order.complete %>
+</p>
+<p>
+  <b>Quote:</b>
+  <%= link_to @work_order.quote.name_with_number, @work_order.quote %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%= @work_order.due_date.to_s(:long) %>
+</p>
+
+<p>
+  <b>PO number:</b>
+  <%= @work_order.po_number %>
+</p>
+
+<h2>Order Items</h2>
+<div class="closed_togglebox">
+<% @work_order.quote_items.each do |item| %>
+	<h3><a href="#"><%= item.name %></a></h3>
+	<div class="work_order_item">
+		<% if item.product_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th>Product Name</th>
+				<th>Size</th>
+				<th>Dimension</th>
+				<th>Extras</th>
+				<th>Amount Needed</th>
+				<th>Quantity Ordered</th>
+				<th>Quantity Consumed</th>
+			</tr>
+		<% item.product_line_items.each do |pli| %>
+			<tr>
+				<td><%= link_to pli.product.name, pli.product %></td>
+				<td><%= pli.product_size.name %></td>
+				<td><%= pli.dimension %> <%= amount_suffix(pli.product) %></td>
+				<td><%= grade_and_finish(pli.grade, pli.finish) %></td>
+				<td><%= pli.amount_needed.to_s + " " + amount_suffix(pli.product) %></td>
+				<td><%= pli.order_quantity %></td>
+				<td><%= pli.product_consumed %></td>
+			</tr>
+		<% end %>
+		</table>
+		<% end %>
+		<% if item.labour_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th class="description">Description</th>
+				<th class="workers">Quantity</th>
+				<th class="location">Location</th>				
+				<th class="calc_order">Calc Total Time (mins)</th>
+				<th>Minutes Completed</th>
+				<th>Completed</th>
+			</tr>
+			<% item.labour_line_items.each do |lli| %>
+			<tr>
+				<td class="description"><%= lli.description %></td>
+				<td class="workers"><%= lli.workers %></td>
+				<td class="location"><%= lli.shop_text %></td>
+				<td class="calc_order"><%= lli.total_minutes.round(2) %></td>
+				<td><%= lli.minutes_completed.round(2) %></td>
+				<td><%= lli.complete %></td>
+			</tr>
+			<% end %>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+				<td align="right"><b>Total</b></td>
+				<td><b><%= item.total_minutes.round(2) %></b></td>
+				<td><b><%= item.total_minutes_completed.round(2) %></b></td>
+				<td><%= item.labour_complete? %></td>
+			</tr>
+		</table>
+		<% end %>
+		<% if item.custom_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th class="name">Name</th>
+				<th>Quantity Ordered</th>
+				<th>Quantity Consumed</th>
+			</tr>
+			<% item.custom_line_items.each do |cli| %>
+			<tr>
+				<td class="name"><%= cli.custom_name %></td>
+				<td><%= cli.order_quantity %></td>
+				<td><%= cli.product_consumed %></td>
+			</tr>
+			<% end %>
+		</table>
+		<% end %>
+	</div>
+<% end %>
+</div>
+<h2>Totals</h2>
+<h4>Products</h4>
+<%= render 'work_orders/product_line_item_aggregate' %>
+<h4>Labour</h4>
+<table>
+	<tr>
+		<th>Item Name</th>
+		<th>Max Quantity</th>
+		<th>Total Minutes</th>
+		<th>Scheduled</th>
+		<th>Completed</th>
+	</tr>
+<% @work_order.labour_aggregate.each do |key, lli| %>
+	<tr>
+		<td><%= lli[:item].name %></td>
+		<td><%= lli[:max_workers] %></td>
+		<td><%= lli[:total].round(2) %></td>
+		<td><%= lli[:scheduled] %></td>
+		<td><%= lli[:completed] %></td>
+	</tr>
+<% end %>
+	<tr>
+		<td>&nbsp;</td>
+		<td align="right">Total</td>
+		<td><b><%= @work_order.total_minutes.to_f.round(2) %></b></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<h4>Custom</h4>
+<%= render 'work_orders/custom_line_item_aggregate' %>
+
+
+<%= render "actions" %>

@@ -1,0 +1,27 @@
+<h3>
+  <%= business.name %> Details
+</h3>
+<p>
+  <b>Website:</b>
+  <%= link_to business.website, business.website %>
+</p>
+<p>
+  <b>Telephone:</b>
+  <%= business.telephone %>
+</p>
+<p>
+  <b>Fax:</b>
+  <%= business.fax %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= mail_to(business.email) %>
+</p>
+<p>
+  <b>Notes:</b>
+  <%= business.notes %>
+</p>
+<p>
+  <b>Address:</b>
+  <%= business.address.to_s %>
+</p>

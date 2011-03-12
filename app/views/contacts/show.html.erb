@@ -1,0 +1,35 @@
+<h1 class="subtitle"><%= @contact.name %></h1>	
+<h3><%= @contact.department %></h3>
+<hr>
+<div class="pane">
+	<h3>Contact Details</h3>
+<p>
+  <b>Email:</b>
+  <%= mail_to(@contact.email) %>
+</p>
+<p>
+  <b>Telephone:</b>
+  <%= @contact.telephone %>
+</p>
+<p>
+  <b>Mobile:</b>
+  <%= @contact.mobile %>
+</p>
+<p>
+  <b>Fax:</b>
+  <%= @contact.fax %>
+</p>
+<p>
+  <b>Address:</b>
+  <%= @contact.address if @contact.address %>
+</p>
+<p>
+  <b>Can bid?: </b>
+  <%= @contact.bidder %>
+</p>
+
+</div>
+<div class="pane">
+	<%= render 'businesses/show', :business => @contact.business unless @contact.business.nil? %>
+</div>
+<%= render 'contacts/actions' %>

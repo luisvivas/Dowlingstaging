@@ -1,0 +1,18 @@
+<div class="actions">
+	<% quote ||= @quote %>
+	<%= quote.number %>:
+	<%= permissioned_actions(quote) do |p|
+  			p.show_link
+  			p.link('Printable', printable_quote_path(quote), :show, quote)
+  			p.edit_link
+			p.destroy_link
+	  		p.link("Show #{quote.request_for_quote.number}", request_for_quote_path(quote.scope_of_work.request_for_quote_id), :show, quote.scope_of_work) if quote.scope_of_work.present?
+	  		p.correspondence_link
+  			p.resources_link
+			if quote.work_order
+				p.link(quote.work_order.number, work_order_path(quote), :show, quote.work_order) 
+			else
+				p.link("Generate Work Order", generate_work_order_quote_path(quote), :create, :work_order) 
+			end
+    end %>
+</div>

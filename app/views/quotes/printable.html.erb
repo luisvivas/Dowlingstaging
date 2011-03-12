@@ -1,0 +1,43 @@
+<h2><%= @quote.name_with_number %></h2>
+<% if @quote.contact %>
+<div class="pane">
+  <h4>Personal Contact Info</h4>
+  <%= render 'contacts/stub', :contact => @quote.contact %>
+</div>
+<% end %>
+<% if @quote.business %>
+<div class="pane">
+  <h4>Business Contact Info</h4>
+  <%= render 'businesses/stub', :business => @quote.business %>
+</div>
+<% end %>
+<p><b>Installation: </b><%= installation_text(@quote) %></p>
+<hr/>
+<table id="cost_summary" class="summary">
+  <tr>
+    <th>Item</th>
+    <th>Cost</th>
+  </tr>
+  <% @quote.quote_items.each do |quote_item| %>
+  <tr>
+    <td><%= quote_item.name %></td>
+    <td><%= number_to_currency(quote_item.marked_up_total) %></td>
+  </tr>
+  <% end %>
+  <tr class="total">
+    <td>Total</td>
+    <td><%= number_to_currency(@quote.total) %> <span class="small">plus taxes</span></td>
+  </tr>
+</table>
+<div class="footer">
+<table id="signatures">
+	<tr class="sign_here">
+		<td><div>&nbsp;</div></td>
+		<td><div>&nbsp;</div></td>
+	</tr>
+	<tr>
+		<td><%= @quote.user.name %></td>
+		<td><%= @quote.contactable %></td>
+	</tr>
+</table>
+</div>

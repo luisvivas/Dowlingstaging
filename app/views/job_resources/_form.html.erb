@@ -1,0 +1,20 @@
+<%= form_for(resource, :url => polymorphic_path([resource.attachable, resource]), :html => { :multipart => true }) do |f| %>
+<%= f.formatted_error_messages %>
+<%= f.hidden_field :attachable_id %>
+<%= f.hidden_field :attachable_type %>
+<div class="field inrow">
+	<%= f.label :name %> <br />
+	<%= f.text_field :name %>
+</div>
+<div class="field">
+	<%= f.label :category, "Resource Category" %> <br />
+	<%= f.select :category, options_for_select(JobResource.categories) %>
+</div>
+<div class="field">
+	<%= f.label :resource, "File" %> <br />
+	<%= f.file_field :resource %>
+</div>
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %>

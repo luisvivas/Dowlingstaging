@@ -1,0 +1,9 @@
+<h1>Listing Correspondence about <%= @parent.best_identifier %></h1>
+
+
+<% content_for :head do %>
+	<%= raw correspondence_index_grid(@parent) %>
+<% end %>
+
+<table id="correspondences_grid"></table>
+<div id="correspondences_grid_pager"></div>

@@ -1,0 +1,12 @@
+<h1><%= @business.name unless @business.blank? %> Contacts</h1>
+<% if @business.present? %>
+	<%= render 'businesses/contacts' %>
+<% else %>
+	<% content_for :head do %>
+		<%= raw contact_index_grid %>
+	<% end %>
+
+	<table id="contacts_grid"></table>
+	<div id="contacts_grid_pager"></div>
+<% end %>
+<%= render 'contacts/collection_actions' %>

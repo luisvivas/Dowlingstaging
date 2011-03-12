@@ -1,0 +1,26 @@
+<p>
+  <b>Name:</b>
+  <%= @product_category.name %>
+</p>
+
+<% unless @product_category.root? %>
+	<p>
+	  <b>Parents:</b>
+	  <%= @product_category.ancestors.map{|c| c.name}.join(" -> ") %>
+	</p>
+
+	<h2>Products in <%= @product_category.name_with_parents %></h2>
+	<% content_for :head do %>
+		<%= raw products_in_category_grid %>
+	<% end %>
+	<table id="products_in_category"></table>
+	<div id="products_in_category_pager"></div>
+	
+<% else %>
+	<p><b>Cost Per Pound:</b>
+		<%= number_to_currency(@product_category.cost_per_pound) %>
+	</p>
+	<%= render "product_categories/children_list" %>
+
+<% end %>
+<%= render 'product_categories/actions' %>

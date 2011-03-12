@@ -1,0 +1,12 @@
+<% indent ||= 0%>
+<tr>
+  <td><span class="indent<%= indent %>"><%= product_category.name %></span></td>
+  <td><%= link_to 'Show', product_category if current_user.can_show?(product_category) %> 
+  <%= link_to 'Edit', edit_product_category_path(product_category) if current_user.can_update?(product_category) %>
+  <%= link_to 'Destroy', product_category, :confirm => 'Are you sure?', :method => :delete if current_user.can_destroy?(product_category) %></td>
+</tr>
+<% if indent == 0 %>
+	<% product_category.children.each do |child_category| %>
+		<%= render :partial => 'product_categories/tablerow', :locals => {:product_category => child_category, :indent => indent + 1} %>
+	<% end %>
+<% end %>

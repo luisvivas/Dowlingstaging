@@ -1,0 +1,28 @@
+<%= form_for(@product_category) do |f| %>
+  <%= f.formatted_error_messages(:object_name => "category") %>
+	<div class="pane">
+		<div class="field required">
+			<%= f.label :name %><br />
+			<%= f.text_field :name %>
+		</div>
+		<div class="field required">
+			<%= f.text_field :parent_id, :class => "hide" %>
+			<%= f.label :parent_id, "Parent Product Category" %><br />
+			<%= product_category_parent_autocomplete @product_category %>
+		</div>
+	</div>
+	<% unless f.object.new_record? %>
+	<div class="pane">
+		<% if f.object.root? %>
+			<div class="field required">
+				<%= f.label :cost_per_pound %><br />
+				<%= f.text_field :cost_per_pound, :class => "long_currency" %>
+			</div>
+		<% end %>
+		<%= render "product_categories/children_list" %>
+	</div>
+	<% end %>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

@@ -1,0 +1,12 @@
+development:
+    access_key_id: AKIAJFDMXWLHMKDPZ7DA
+    secret_access_key: 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
+    bucket: dmfassets_dev
+test:
+    access_key_id: AKIAJFDMXWLHMKDPZ7DA
+    secret_access_key: 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
+    bucket: dmfassets_dev
+production:
+    access_key_id: AKIAJFDMXWLHMKDPZ7DA
+    secret_access_key: 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
+    bucket: dmfassets

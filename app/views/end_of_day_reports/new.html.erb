@@ -1,0 +1,49 @@
+<h1>End of Day Report</h1>
+<div class="window">
+	<div class="pane">
+	<b>Today is <%= Time.now.to_date.to_s(:long_ordinal) %></b>
+	<table>
+		<tr>
+			<td>You signed in at:</td>
+			<td><%= current_user.last_sign_in_at.to_s(:time) %></td>
+		</tr>
+		<tr>
+			<td>It is now:</td>
+			<td><%= Time.now.to_s(:time) %></td>
+		</tr>
+		<tr>
+			<td>Time Signed In:</td>
+			<td><%= format_duration(Time.now - current_user.last_sign_in_at) %></td>
+		</tr>
+	</table>
+  <p id="add_floaty">Add work report for: <%= select_tag 'work_order_picker', options_from_collection_for_select(@work_orders, 'id', 'name_with_number_and_contactable', @work_orders.first.id), :style => "width: 200px" if @work_orders.first.present? %>
+	<%= select_tag('work_order_item_picker', options_from_collection_for_select(@work_orders.first.quote_items, 'id', 'name')) if @work_orders.first.present? && @work_orders.first.quote_items.present? %><button id="add_work_order" class="inline">Add</button></p>
+	</div>
+	<div class="pane">
+		<%= current_user_calendar %>
+	</div>
+	<div class="clear"><hr/></div>
+	<%= form_for @report, :url => end_of_day_report_path do |form| %>
+	<%= form.formatted_error_messages %>
+	<%= form.hidden_field :user_id %>
+	<div id="added_work_orders">
+	</div>
+  <div id="add_new_destination">
+  </div>
+	<div class="actions">
+		<hr/>
+		<div class="field inrow">
+			<%= form.label :extra_hours, "Other Hours worked today" %><br/>
+			<%= form.text_field :extra_hours, :class => "total_contributor" %>
+		</div>
+		<div class="field inrow">
+			<%= form.label :hours_description, "Other Hours description" %><br/>
+			<%= form.text_area :hours_description %>
+		</div>
+		<div class="clear">
+		<p><b id="total_hours"></b></p>
+		Sign out after? <%= form.check_box :sign_out_after, :checked => "checked" %><br/>
+		<%= form.submit "Submit report" %>
+	</div>
+	<% end %>
+</div>

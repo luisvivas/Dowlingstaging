@@ -1,0 +1,15 @@
+<% options ||= {} %>
+<%= f.fields_for :scope_items, options do |i| %>
+	<div class="item">
+		<span class="item_form">
+		<%= i.hidden_field :_destroy, :class => "destroy_item" %>
+		<%= i.label :name, "Item Name" %>		
+		<%= i.text_field :name, :class => "with_action item_name" %><br/>
+		<%= i.label :notes %>
+		<%= i.text_area :notes, :rows => 0, :cols => 0 %>
+		</span>
+		<a href="#delete_item" class="delete_item ss_sprite ss_delete">Delete <%= i.object.name %></a>
+		<hr/>
+		
+	</div>
+<% end %>

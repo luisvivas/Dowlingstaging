@@ -1,0 +1,52 @@
+<%= render 'layouts/head' %>
+	<body class="bp two-col">
+		<div id="headerbg"></div>
+		<div id="container" class="container">
+			<div id="header">
+				<div class="sidebar">
+					<h1 class="logo"><%= link_to 'Dowling SIT', root_path %></h1>
+				</div>
+	            <div id="breadcrumb"><%= breadcrumb %></div>
+				<%= resource_actions %>
+				<% if user_signed_in? %>
+				<div id="usercontrols">
+					Signed in as <%= current_user.email %> | <%= link_to "Sign out", new_end_of_day_report_path %>
+				</div>
+				<% end %>
+		    </div>
+			<div class="sidebar">
+				<%= permissioned_menu %>
+				<% if user_signed_in? %>
+				<div id="quicksearches">
+					<%= contact_quicksearch %>
+					<%= business_quicksearch %>
+					<%= quote_quicksearch %>
+					<%= work_order_quicksearch %>
+					<%= request_for_quote_quicksearch %>
+					<%= product_quicksearch %>
+				</div>
+				<% end %>
+				<%= yield :sidebar %>
+       </div>
+		    <!-- #header end -->
+		    <div id="content">
+				<div id="flash">
+					<% [:error, :notice, :success, :alert].each do |f| %>
+						<% if flash[f] %>
+	 					<div class="<%= f%>">
+							<%= flash[f] %>
+						</div>
+						<% end %>
+					<% end %>
+				</div>
+		   		<%= yield %>
+		    </div>
+		    <!--- #content end -->
+			<div id="container-footer-push"></div>
+		</div>
+		<!-- #container end -->
+		<div id="footer">
+		 	DSIT v0.1.1. See an issue? <%= mail_to Settings.administrator_email, 'Contact the administrator' %>. For Internal Use Only.
+	    </div>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+<tr class="custom line_item">
+	<td class="product"><%= cli.custom_name %></td>
+	<td class="real_order"><%= cli.order_quantity %></td>
+	<td class="piece_cost"><%= number_to_currency(cli.cost_per_pound) %></td>
+	<td class="markup"><%= cli.markup %>%</td>
+	<td class="total_cost"><%= number_to_currency(cli.total) %></td>
+</tr>

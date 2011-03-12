@@ -1,0 +1,9 @@
+<div class="actions">
+<%= link_to "Generate Lead Letter", lead_letter_request_for_quote_scope_of_work_path(scope_of_work.request_for_quote, scope_of_work), :class => "ss_sprite ss_email_go" %> | 
+<%= link_to "Generate Quote", generate_quote_request_for_quote_scope_of_work_path(scope_of_work.request_for_quote, scope_of_work), :class => "ss_sprite ss_page_add" %> | 
+<%= link_to "Destroy Scope of Work", request_for_quote_scope_of_work_path(scope_of_work.request_for_quote, scope_of_work), :method => :delete, :class => "ss_sprite ss_script_delete",
+:confirm => "Are you sure you wish to remove this bidder and scope of work?" %>
+<% scope_of_work.quotes.each do |q| %>
+	| <%= link_to "View Generated " + q.number, quote_path(q), :class => "ss_sprite ss_page" %>
+<% end %>
+</div>

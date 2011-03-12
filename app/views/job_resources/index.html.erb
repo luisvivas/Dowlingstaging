@@ -1,0 +1,11 @@
+<h1>Job Resources for <%= @parent.best_identifier %></h1>
+<%= render 'job_resources/list', :resources => @resources %>
+<% if @parent.is_a?(Quote) && @parent.request_for_quote.present? %>
+  <h2><%= @parent.request_for_quote.best_identifier %> Resources</h2>
+  <%= render 'job_resources/list', :resources => @parent.request_for_quote.job_resources %>
+<% end %>
+<div class="actions">
+	<%= link_to "Add New", new_polymorphic_path([@parent, JobResource.new]) %> | 
+	<%= link_to "Edit " + @parent.best_identifier, edit_polymorphic_path(@parent) %> |
+	<%= link_to "Show " + @parent.best_identifier, polymorphic_path(@parent) %>
+</div>

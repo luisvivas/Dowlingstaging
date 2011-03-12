@@ -1,0 +1,15 @@
+<% if resources.any? {|r| !r.image? } %>
+<div class="pane">
+		<h2>Images</h2>
+		<% images = resources.reject {|r| !r.image? } %>
+		<%= render :partial => "job_resources/list", :locals => {:resources => images} %>
+</div>
+<div class="pane">
+		<h2>Other</h2>
+		<% other = resources.reject {|r| r.image? } %>
+		<%= render :partial => "job_resources/list", :locals => {:resources => other} %>
+</div>
+
+<% else %>
+	<%= render :partial => "job_resources/list", :locals => {:resources => resources} %>
+<% end %>

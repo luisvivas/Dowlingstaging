@@ -1,0 +1,32 @@
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= link_to @product.category.name_with_parents, product_category_path(@product.category) if @product.category %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @product.notes %>
+</p>
+
+<div class="pane">
+  <b>Sizes:</b>
+  <table class="stripeMe">
+    <tr>
+      <th>Name</th>
+      <th>Weight per <%= amount_suffix(@product) %></th>
+    </tr>
+    <% @product.sizes.each do |size| %>
+    <tr>
+      <td><%= size.name %></td>
+      <td><%= size.amount %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= render 'products/actions' %>

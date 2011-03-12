@@ -1,0 +1,23 @@
+<h2>RFQ: <%= @request_for_quote.job_name %></h2>
+<p>
+  <b>Category:</b>
+  <%= @request_for_quote.category %>
+</p>
+
+<p>
+  <b>SHRED Eligibility:</b>
+  <%= @request_for_quote.shred %>
+</p>
+
+<p>
+  <b>Site Visit Required:</b>
+  <%= @request_for_quote.site_visit %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @request_for_quote.notes %>
+</p>
+
+<%= render :partial => 'scope_of_works/show', :collection => @request_for_quote.scope_of_works, :as => :scope_of_work %>
+<%= render 'request_for_quotes/actions' %>

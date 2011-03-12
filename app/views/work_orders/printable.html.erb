@@ -1,0 +1,79 @@
+<h1><%= @work_order.name_with_number %></h1>
+<h2><%= @work_order.contactable.name %></h2>
+<h2>Due: <%= @work_order.due_date.to_s(:long) %></h2>
+<% if @work_order.notes.present? %>
+	<b>Notes:</b>
+	<p><%= @work_order.notes %></p>
+<% end %>
+<p><b>Installation: </b><%= installation_text(@work_order) %></p>
+<% @work_order.quote_items.each do |item| %>
+	<h3><%= item.name %></h3>
+	<div class="work_order_item">
+		<% if item.notes.present? %>
+			<b>Notes:</b>
+			<p><%= item.notes %></p>
+		<% end %>
+		<% if item.product_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th>Product Name</th>
+				<th>Size</th>
+				<th>Dimension</th>
+				<th>Extras</th>
+				<th>Amount Needed</th>
+				<th>Quantity Ordered</th>
+			</tr>
+		<% item.product_line_items.each do |pli| %>
+			<tr>
+				<td><%= pli.product.name %></td>
+				<td><%= pli.product_size.name %></td>
+				<td><%= pli.dimension %> <%= amount_suffix(pli.product) %></td>
+				<td><%= grade_and_finish(pli.grade, pli.finish) %></td>
+				<td><%= pli.amount_needed.to_s + " " + amount_suffix(pli.product) %></td>
+				<td><%= pli.order_quantity %></td>
+			</tr>
+		<% end %>
+		</table>
+		<% end %>
+		<% if item.labour_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th class="description">Labour Description</th>
+				<th class="workers">Quantity</th>
+				<th class="location">Location</th>
+				<th class="setup">Setup Time</th>
+				<th class="runtime">Run Time</th>
+				<th class="calc_order">Total Hours</th>
+				<th>Completed</th>
+			</tr>
+			<% item.labour_line_items.each do |lli| %>
+			<tr>
+				<td class="description"><%= lli.description %></td>
+				<td class="workers"><%= lli.workers %></td>
+				<td class="location"><%= lli.shop_text %></td>
+				<td class="setup"><%= lli.setup_time %></td>
+				<td class="runtime"><%= lli.run_time %></td>
+				<td class="calc_order"><%= lli.total_hours.round(2) %></td>
+				<td><%= check_box_tag lli.id.to_s + "_complete", "1", lli.complete %></td>
+			</tr>
+			<% end %>
+		</table>
+		<% end %>
+		<% if item.custom_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th class="name">Name</th>
+				<th>Quantity Ordered</th>
+				<th>Quantity Consumed</th>
+			</tr>
+			<% item.custom_line_items.each do |cli| %>
+			<tr>
+				<td class="name"><%= cli.custom_name %></td>
+				<td><%= cli.order_quantity %></td>
+				<td><%= cli.product_consumed %></td>
+			</tr>
+			<% end %>
+		</table>
+		<% end %>
+	</div>
+<% end %>

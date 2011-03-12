@@ -1,0 +1,9 @@
+<div class="actions">
+	<% category ||= @product_category %>
+	<%= category.name %>: 
+	<%= permissioned_actions_from_array([
+		["Show", category, :show],
+		['Show All', product_categories_path, :show, :product_category],
+		['Edit', edit_product_category_path(category), :update, category]
+	]) %>
+</div>

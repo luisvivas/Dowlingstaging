@@ -1,0 +1,66 @@
+<%= form_for EndOfDayReport.new, :url => "" do |report_form| %>
+<%= report_form.fields_for :quote_items, @quote_item, :child_index => "NEW_RECORD" do |form| %>
+<div class="end_of_day">
+<h4><%= @quote_item.name %></h4>
+<%= form.hidden_field :id %>
+<div class="labour">
+	<h5>Labour Completed</h5>
+	<table>
+		<tr>
+			<th>Description</th>
+      <th <%= viewable_hours_column %>>Total Hours</th>
+			<th>Hours Worked So Far</th>
+			<th>Hours worked By You Today</th>
+			<th <%= viewable_hours_column %>>Calc Hours Remaining</th>
+			<th>Shop / Field</th>
+			<th>Labour complete</th>
+		<tr>
+		<%= form.fields_for :labour_line_items do |f| %>
+		<%= f.fields_for :time_reports, setup_time_report(f.object) do |tr| %>
+		<tr>
+			<td><%= f.object.description %><%= f.hidden_field :id %></td>
+			<td <%= viewable_hours_column %>><%= f.object.total_hours.to_f.round(2) %></td>
+			<td><%= f.object.hours_completed.to_f.round(2) %></td>
+			<td><%= tr.text_field :hours_added, :class => "added_completion total_contributor" %><%= f.hidden_field :hours_completed %></td>
+			<td <%= viewable_hours_column %>><%= labour_remaining(f.object) %></td>
+			<td><%= f.object.shop_text %></td>
+			<td><%= f.check_box :complete %></td>
+		</tr>
+		<tr class="description" style="display:none;">
+			<td colspan="2"><%= tr.label :description, "Today's Work" %></td>
+			<td colspan="5">
+				<%= tr.hidden_field :user_id %>
+				<%= tr.hidden_field :labour_line_item_id %>
+				<%= tr.text_field :description %>
+			</td>
+		</tr>
+		<% end %>
+		<% end %>
+	</table>
+</div>
+<div class="products">
+	<h5>Materials Consumed</h5>
+	<table>
+		<tr>
+			<th>Product</th>
+			<th>Size</th>
+			<th>Dimension</th>
+			<th>Pieces available</th>
+			<th>Total peices consumed</th>
+			<th>Calc pieces remaining</th>
+		</tr>
+		<%= form.fields_for :product_line_items do |f| %>
+		<tr>
+			<td><%= f.object.product.name %><%= f.hidden_field :id %></td>
+			<td><%= f.object.product_size.name %></td>
+			<td><%= f.object.dimension %></td>
+			<td><%= f.object.order_quantity %></td>
+			<td><%= f.text_field :product_consumed, :class => "completion" %></td>
+			<td><%= product_remaining(f.object) %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+</div>
+<% end %>
+<% end %>

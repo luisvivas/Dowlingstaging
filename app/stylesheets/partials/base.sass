@@ -1,0 +1,35 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import blueprint/reset
+
+// Import all the default blueprint modules so that we can access their mixins. Defaults are colors, grid, typography, utilities, form, interaction, debug, print, and ie.
+@import blueprint
+
+// Import the non-default scaffolding module.
+@import blueprint/scaffolding
+
+//Configure the blueprint grid settings
+$blueprint_grid_columns: 24
+$blueprint_container_size: 1390px
+$blueprint_grid_margin: 10px
+
+$blueprint_grid_width: ($blueprint_container_size + $blueprint_grid_margin) / $blueprint_grid_columns - $blueprint_grid_margin
+
+// Layout Specific Details
+$sidebar_columns: 3
+$content_columns: $blueprint_grid_columns - $sidebar_columns
+
+$standard_input_width: $content_columns / 2 * ($blueprint_grid_width + $blueprint_grid_margin) - $blueprint_grid_margin
+$short_input_width: $content_columns / 4 * ($blueprint_grid_width + $blueprint_grid_margin) - $blueprint_grid_margin
+
+
+//Recommended Blueprint configuration with scoping and semantic layout:
++blueprint-scaffolding(unquote("body.bp"))
+
+body
+	&.bp
+		+blueprint-typography(true)
+		+blueprint-utilities
+		+blueprint-debug
+		+blueprint-interaction
+		form
+			+blueprint-form

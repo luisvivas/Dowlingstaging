@@ -1,0 +1,12 @@
+<% resource ||= setup_attachable_resource(attachable) %>
+<ul class="resource_list">
+<% resource.attachable.job_resources[0..3].each do |r| %>
+  <li>
+    <%= resource_icon_link(r) %>
+  </li>
+<% end %>
+</ul>
+<%= link_to "Browse all", polymorphic_path([resource.attachable, resource]) if resource.attachable.job_resources.length > 0 %>
+
+<h4>New Job Resource</h4>
+<%= render :partial => "job_resources/form", :locals => {:resource => resource} %>

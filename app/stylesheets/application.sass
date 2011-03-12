@@ -1,0 +1,474 @@
+@import partials/base
+@import blueprint/buttons
+@import compass/layout/sticky-footer
+
+$short_input_width: $short_input_width - 12px
+$standard_input_width: $standard_input_width - 12px
+
+=input_width($columns)
+  input
+    width: $columns * ($blueprint_grid_width + $blueprint_grid_margin) - $blueprint_grid_margin - 12px !important
+=clearafter()
+  content: "."
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden
+
++sticky-footer(50px, unquote("#container"), unquote("#container-footer-push"))
+#container-footer-push
+  width: 100%
+  clear: both
+
+// Fonts
+/*
+  * Web Fonts from fontspring.com
+  *
+  * All OpenType features and all extended glyphs have been removed.
+  * Fully installable fonts can be purchased at http://www.fontspring.com
+  *
+  * The fonts included in this stylesheet are subject to the End User License you purchased
+  * from Fontspring. The fonts are protected under domestic and international trademark and
+  * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+  * distributing this font software.
+  *
+  * (c) 2010 Fontspring
+  *
+  *
+  *
+  *
+  * The fonts included are copyrighted by the vendor listed below.
+  *
+  * Vendor:       Typodermic
+  * License URL: http://www.fontspring.com/fflicense/typodermic
+  *
+  *
+
+@font-face
+  font-family: 'ExpresswayRgRegular'
+  src: url('type/expressway_rg-webfont.eot')
+  src: local("☺"), url('type/expressway_rg-webfont.woff') format("woff"), url('type/expressway_rg-webfont.ttf') format("truetype"), url('type/expressway_rg-webfont.svg#webfont') format("svg")
+  font-weight: normal
+  font-style: normal
+
+// Standard elements
+body.bp
+  table
+    th
+      background-color: #FFF
+    .indent0
+      font-weight: bold
+      padding-left: 0px
+    .indent1
+      padding-left: 20px
+    &.stripeMe tr.alt
+      background-color: #EFEFEF
+    th.priority, td.priority
+      width: 45%
+    td.right
+      text-align: right
+    td.loss
+      background-color: red
+    td.gain
+      background-color: green
+    &.bordered
+      &, td, th
+        border: 1px solid #444
+      &
+        border-bottom: 0px
+        border-left: 0px
+      td, th
+        border-top: 0px
+        border-right: 0px
+      
+    
+  pre
+    white-space: pre-wrap        /* css-3 */
+    white-space: -moz-pre-wrap  /* Mozilla, since 1999 */
+    white-space: -pre-wrap      /* Opera 4-6 */
+    white-space: -o-pre-wrap    /* Opera 7 */
+    word-wrap: break-word        /* Internet Explorer 5.5+ */
+  button, input[type="submit"]
+    &.inline
+      margin-left: 10px
+      float: none
+      display: inline
+
+  // Containers and wrappers
+  .sidebar
+    height: 100%
+  .ui-widget
+    font-family: inherit
+    font-size: 1em
+
+
+  // Typography
+  h1.subtitle
+    margin-bottom: 3px !important
+    & + h3
+      margin-top: 0px
+  h4, h5, h6
+    margin-bottom: .5em
+
+  .logo h1 a
+    color: #222
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+  p
+    & + p
+      text-indent: 0px
+    &.text + p.text
+      test-indent: 2em
+
+  .pane
+    h1, h2, h3, h4, h5, h6
+      margin-top: 0px
+
+  .ui-widget
+    h1, h2, h3, h4, h5, h6
+      margin: 0px
+      padding: 0px
+      font-size: 100%
+  hr
+    margin-top: 1em
+  .disabled
+    color: #CCC
+
+  // Forms
+  form
+    .field
+      +column-base(true)
+      &.fullrow
+        width: 100%
+      // Layout for smaller fields beside one another
+      &.inrow
+        +column-base(false)
+        input[type="text"], input[type="password"], input[type="file"]
+          width: $short_input_width
+        & + .field
+          input[type="text"], input[type="password"], input[type="file"]
+            width: $short_input_width
+      textarea
+        width: $standard_input_width
+        height: 100px
+        margin-top: 2px
+      input[type="text"], input[type="password"], input[type="file"]
+        width: $standard_input_width
+        font-size: 1.25em
+        &.text, &[type=text]
+          margin-top: 2px
+        & + div.small
+          margin-top: -1em
+        &.short
+          width: $short_input_width
+        &.with_action
+          width: $standard_input_width - 60px
+        &.header
+          font-size: 1.75em
+
+      // Error divs : make em red
+      .fieldWithErrors, .field_with_errors
+        display: inline
+        input
+          border-color: #8A1F11
+        label
+          color: #8A1F11
+      // Required fields : under line the label
+      &.required label
+        text-decoration: underline
+
+  // Interaction & Searches
+  .alert
+    +error
+  #flash
+    +prepend(4)
+    +append(4)
+
+
+  #breadcrumb, #usercontrols
+    margin-top: 2px
+    height: 20px
+    +column-base(true)
+
+  #usercontrols
+    float: right
+  #breadcrumb
+    float: left
+
+
+  #quicksearches
+
+  input.quicksearch, input.helpertext
+    color: #cccccc
+    width: 100%
+    &:focus
+      color: black
+
+  input.quicksearch
+    -webkit-appearance: searchfield
+    -webkit-box-sizing: border-box
+    border: 2px inset
+
+  #action_quicksearch
+    margin-bottom: 10px
+
+  .actions
+    width: 100%
+    padding-top: 20px
+    clear: both
+    input, select
+      width: auto !important
+  #header .actions
+    clear: none
+    width: auto
+    float: left
+    padding: 0px
+    margin-top: 2px
+    margin-left: 10px
+    .due
+      display: none
+  //Page Layout
+  #headerbg
+    border-top: 4px solid #F00
+    position: absolute
+    top: 0px
+    left: 0px
+    height: 32px
+    width: 100%
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.2, rgb(227,227,227)),color-stop(0.68, rgb(245,245,245)))
+    background-image: -moz-linear-gradient(center bottom,rgb(227,227,227) 20%,rgb(245,245,245) 68%)
+    z-index: -10
+
+  #header
+    padding-top: 9px
+    h1
+      margin-bottom: 4px
+      padding-bottom: 5px
+      border-bottom: 3px solid #F00
+      a
+        color: #111
+        font-size: 18px
+        font-family: 'ExpresswayRgRegular', 'Helvetica', 'Arial', sans-serif !important
+
+  #footer
+    margin: 0px auto
+    color: #AAA
+    a, a:visited
+      color: #999
+    a:hover
+      color: #777
+  ul#menu
+    clear: both
+    padding-left: 0px
+    margin: 0px
+    li
+      list-style-type: none
+      display: block
+      width: 100%
+    .menu_header_level_1
+      padding: 0.4em 0.5em 0.1em 0.7em
+      a
+        padding: 0px
+        &.ss_sprite
+          padding-left: 19px
+
+  #menu ul
+    padding: 3px 0px 0px 15px
+
+  #menu.quicksearching ul
+    padding-top: 0px !important
+    padding-left: 0px !important
+  #menu.quicksearching li
+    padding-top: 2px !important
+    padding-left: 0px !important
+  #action_filter
+    float: left
+
+  .ac_results ul
+    list-style-type: none
+    margin: 0px
+    padding: 0px
+
+  // Dashboard
+  ul.activity_list
+    margin: 0px
+    padding-left: 20px
+
+  // Products
+  .size
+    +column-base(true)
+    .size_name
+      +column(4)
+      +input_width(4)
+    .size_cost
+      +column(4)
+      +input_width(2)
+    .delete_size, .undeletable_size
+      +column-base(true)
+      margin-top: 25px
+      padding-bottom: 0px
+
+  // Resources
+  ul.resource_list
+    margin: 0px 0px 10px 0px
+    padding: 0px
+    list-style-type: none
+    list-style-image: none
+    width: 100%
+    li
+      float: left
+      margin-right: 10px
+      text-align: center
+  #ul.resource_list:after
+    +clearafter()
+
+  // RFQs
+  #auto_bidder_name
+    width: 270px
+  #bidder_add_button
+    float: right
+  form .field .item_form textarea
+    height: 40px
+
+  // Quotes
+  table.line_items
+    td, th
+      &.amount
+        width: 75px
+        input[type="text"]
+          width: 30px
+      &.unit_weight
+        width: 80px
+      &.pound_cost
+        input[type="text"]
+          width: 60px
+      &.piece_cost
+        input[type="text"]
+          width: 100px
+      &.markup
+        width: 55px
+        input[type="text"]
+          width: 20px
+    th
+      font-size: 10px !important
+    .total_cost
+      font-weight: bold
+    .line_item
+      input[type="text"]
+        width: 40px
+      .description input, input.description
+        width: 90%
+      .extras select
+        width: 80px
+
+  table.summary
+    width: 400px
+    td
+      font-weight: bold
+    input[type="text"]
+      width: 60px
+    tr.total, tr.total input
+      font-size: 16px !important
+      
+
+  // Work Orders
+  table.aggregate
+    td
+      border-bottom: 1px #CCC solid
+    tr.title td
+      font-weight: bold
+      border-bottom: none
+    table
+      width: 340px
+      margin-bottom: 0em
+  table input
+    &.completion, &.added_completion
+      width: 40px
+
+  // Queues
+  .queue_item
+    border: 1px solid #BBB
+    padding: 5px 10px
+    margin-bottom: 10px
+    .actions
+      padding-top: 0px
+    .queue_description
+      float: left
+      // width: 300px
+      margin: 0px
+      padding-left: 15px
+
+    h4
+      margin-bottom: 10px
+    .due
+      float: right
+
+    &.overdue
+      border-color: $error_border_color
+      .due
+      color: $error_color
+
+  .queue_box
+    float: left
+    text-align: center
+    margin-right: 10px
+    &.incomplete
+      +error
+    &.in_progress
+      +notice
+    &.complete
+      +success
+  .overview
+    .not_super_important
+      display: none
+    .queue_box
+      &.last
+        margin-right: 0px
+    .queue_description
+      display: none
+
+  // End of day reports
+  .end_of_day
+    .labour
+      +column(10)
+    .products
+      +column(10, true)
+    &:after
+      +clearafter()
+  #add_new_destination
+    margin: 20px 0px
+
+  .letterhead
+    img.logo
+      display: block
+      margin: 10px auto
+    div.info
+      text-align: center
+      color: #555
+      padding: 5px
+      border: 1px solid #CCC
+      margin: 5px 20px
+    table.info
+      width: 600px !important
+      margin: 0 auto
+      tr td
+        font-size: 15px
+        padding: 0px
+        width: 100px
+        text-align: center
+
+  ul.stub
+    padding-left: 0px
+    &, li
+      list-style-type: none
+      list-style-image: none
+
+  #signatures
+    margin: 20px auto
+    width: 100%
+    td
+      padding: 0px 40px
+    .sign_here td div
+      border-bottom: 1px solid #000
+      margin: 50px 0px 10px 0px 

@@ -1,0 +1,42 @@
+<table class="aggregate" id="labour_aggregate">
+	<tr>
+		<th>Description</th>
+		<th>Quantity</th>
+		<th>Total Hours</th>
+		<th>Scheduled</th>
+		<th>Hours Completed</th>
+		<th>Complete</th>
+		<th>Schedule Link</th>
+	</tr>
+<% @work_order.labour_aggregate.each do |k, ll| %>
+<%= form.fields_for :quote_items, ll[:item] do |qi| %>
+	<tr class="title">
+		<td colspan="3">
+			<%= ll[:item].name %>
+			<%= qi.hidden_field :id %>
+		</td>
+		<td></td>
+	</tr>
+	<% ll[:line_items].each do |lli| %>
+	<% qi.fields_for(:labour_line_items, lli) do |f| %>
+	<tr>
+		<td><%= lli.description %><%= f.hidden_field :id %></td>
+		<td><%= lli.workers %></td>
+		<td><%= lli.total_hours.round(2) %></td>
+		<td><%= f.check_box :scheduled, :class => "scheduled" %></td>
+		<td><%= f.text_field :hours_completed, :class => "completion" %></td>
+		<td><%= f.check_box :complete, :class => "completion completed" %></td>
+		<td><%= link_to_labour_line_item_schedule(lli) %></td>
+	</tr>
+	<% end %>
+	<% end %>
+<% end %>
+<% end %>
+	<tr class="title">
+		<td colspan="3">&nbsp;</td>
+		<td><strong>All Scheduled? <input type="checkbox" class="schedule_all" data-all-container="#labour_aggregate">&nbsp;</strong></td>
+		<td>&nbsp;</td>
+		<td><strong>All Complete? <input type="checkbox" class="complete_all" data-all-container="#labour_aggregate">&nbsp;</strong></td>
+		<td>&nbsp;</td>
+	</tr>
+</table>

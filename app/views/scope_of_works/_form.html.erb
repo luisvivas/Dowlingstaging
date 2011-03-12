@@ -1,0 +1,15 @@
+<h3>Add New Bidder</h3>
+<p>
+<%= form_for(scope, :url => request_for_quote_scope_of_works_path(request)) do |f| %>
+  <%= f.formatted_error_messages %>
+  <%= f.text_field :contact_id, :class => "hide" %>
+  Contact: <%= contact_bidder_autocomplete %><%= f.submit "Add", :class => "inline" %><br/>
+  New scope or duplicate existing? <%= new_scope_duplicate_select(request) %>
+<% end%>
+or
+<%= form_for(scope, :url => request_for_quote_scope_of_works_path(request)) do |f| %>
+  <%= f.text_field :business_id, :class => "hide" %>
+  Business: <%= business_bidder_autocomplete %><%= f.submit "Add", :class => "inline" %><br/>
+  New scope or duplicate existing? <%= new_scope_duplicate_select(request) %>
+<% end %>
+</p>

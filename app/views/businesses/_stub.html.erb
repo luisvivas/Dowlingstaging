@@ -1,0 +1,7 @@
+<ul class="business stub">
+  <li class="name"><b><%= business.name %></b></li>
+  <li class="telephone"><%= "Telephone: " if business.more_than_one_phone? %><%= business.telephone %></li>
+  <li class="fax"><%= "Fax: " if business.more_than_one_phone? %><%= business.fax %></li>
+  <li class="email"><%= business.email %></li>
+  <li class="address"><%= business.address if business.address %>
+</ul>

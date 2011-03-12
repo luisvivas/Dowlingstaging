@@ -1,0 +1,6 @@
+<%= form_for request_for_quote, :html => {:id => "scope_item_form_template", :class => "hide"} do |f| %>
+	<% scope = f.object.scope_of_works.build; scope.scope_items.build.name = "" %>
+	<% f.fields_for :scope_of_works, scope, :child_index => "NEW_PARENT_RECORD" do |s| %>
+		<%= render :partial => "scope_items/form", :locals => {:f => s, :options => {:child_index => "NEW_CHILD_RECORD"}} %>
+	<% end %>
+<% end %>

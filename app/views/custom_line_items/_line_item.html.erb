@@ -1,0 +1,12 @@
+<tr class="custom line_item">
+	<td class="product">
+		<%= l.hidden_field :id unless l.object.new_record? %>
+		<%= l.hidden_field :_destroy, :class => "destroy_custom_line_item" %>
+		<%= l.text_field :custom_name, :class => "line_item_name description" %>
+	</td>
+	<td class="real_order"><%= l.text_field :order_quantity, :class => "line_item_real_order_quantity" %></td>
+	<td class="piece_cost"><%= l.text_field :cost_per_pound, :class => "line_item_cost_per_piece long_currency" %></td>
+	<td class="markup"><%= l.text_field :markup, :class => "line_item_markup" %>%</td>
+	<td class="total_cost"></td>
+	<td class="delete"><a href="#" class="ss_sprite ss_delete remove_custom_line_item"></a></td>
+</tr>

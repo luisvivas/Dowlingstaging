@@ -1,0 +1,10 @@
+<h1>RFQs</h1>
+
+<% content_for :head do %>
+	<%= raw request_for_quote_index_grid %>
+<% end %>
+
+<table id="request_for_quotes_grid"></table>
+<div id="request_for_quotes_grid_pager"></div>
+
+<%= render 'request_for_quotes/collection_actions' %>

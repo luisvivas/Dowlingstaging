@@ -1,0 +1,15 @@
+Model
+ - associations spelled correctly
+ - accepts_nested_attributes_for any nested attribute associations
+ - validates presence of identifying attributes
+ - validates uniqueness of identifying attributes
+ - ensures creation of associated objects for forms (fields_for won't display anything unless there is a blank object)
+ - includes ModelActivityTracker
+
+Controller
+ - authenticates user before all actions
+ - grid'd
+
+Views
+ - action links are in <div class="actions" />
+ - titles are capitalized and not underscored

@@ -1,0 +1,145 @@
+<h1>Work Order Profitability Report for <%= @work_order.name_with_number %></h1>
+<%= render 'work_orders/actions' %>
+<h2>Order Items</h2>
+<div class="closed_togglebox">
+<% @work_order.quote_items.each do |item| %>
+	<h3><a href="#"><%= item.name %></a></h3>
+	<div class="work_order_item">
+		<% if item.product_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th>Product Name</th>
+				<th>Size</th>
+				<th>Dimension</th>
+				<th>Extras</th>
+				<th>Amount Needed</th>
+				<th>Quantity Ordered</th>
+				<th>Quantity Consumed</th>
+				<th>Internal Cost</th>
+				<th>Revenue</th>
+				<th>Profit</th>
+			</tr>
+		<% item.product_line_items.each do |pli| %>
+			<tr>
+				<td><%= link_to pli.product.name, pli.product %></td>
+				<td><%= pli.product_size.name %></td>
+				<td><%= pli.dimension %></td>
+				<td><%= grade_and_finish(pli.grade, pli.finish) %></td>
+				<td><%= pli.amount_needed.to_s + " " + amount_suffix(pli.product) %></td>
+				<td><%= pli.order_quantity %></td>
+				<td><%= pli.product_consumed %></td>
+				<%= render 'prof_cols', :li => pli %>
+			</tr>
+		<% end %>
+		</table>
+		<% end %>
+		
+		<% if item.labour_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th class="description">Description</th>
+				<th class="workers">Quantity</th>
+				<th class="calc_order">Estimated Total Minutes</th>
+				<th>Minutes Completed</th>
+				<th>Internal Cost</th>
+				<th>Revenue</th>
+				<th>Profit</th>
+			</tr>
+			<% item.labour_line_items.each do |lli| %>
+			<tr>
+				<td class="description"><%= lli.description %></td>
+				<td class="workers"><%= lli.workers %></td>
+				<td class="calc_order"><%= lli.total_minutes %></td>
+				<td><%= lli.minutes_completed %></td>
+				<%= render 'prof_cols', :li => lli %>
+			</tr>
+			<% end %>
+		</table>
+		<% end %>
+		
+		<% if item.custom_line_items.length > 0 %>
+		<table>
+			<tr>
+				<th class="name">Name</th>
+				<th>Quantity Ordered</th>
+				<th>Quantity Consumed</th>
+				<th>Internal Cost</th>
+				<th>Revenue</th>
+				<th>Profit</th>
+			</tr>
+			<% item.custom_line_items.each do |cli| %>
+			<tr>
+				<td class="name"><%= cli.custom_name %></td>
+				<td><%= cli.order_quantity %></td>
+				<td><%= cli.product_consumed %></td>
+				<%= render 'prof_cols', :li => cli %>
+			</tr>
+			<% end %>
+		</table>
+		<% end %>
+	</div>
+<% end %>
+</div>
+
+<h2>Totals</h2>
+<h4>Products</h4>
+<table id="products_aggregate" class="aggregate">
+	<tr>
+		<th>Product Name</th>
+		<th>Size</th>
+		<th>Dimension</th>
+		<th>Extras</th>
+		<th>Amount Needed</th>
+		<th>Quantity</th>
+		<th>Quantity Consumed</th>
+		<th>Internal Cost</th>
+		<th>Revenue</th>
+		<th>Profit</th>
+	</tr>
+<% @work_order.products_aggregate.each do |key, pli| %>
+	<tr>
+		<td><%= link_to pli[:product][:name], product_path(pli[:product][:id]) %></td>
+		<td><%= pli[:product_size][:name] %></td>
+		<td><%= pli[:dimension] %></td>
+		<td><%= grade_and_finish(pli[:grade], pli[:finish]) %></td>
+		<td><%= pli[:amount_needed].to_s + " " + amount_suffix(pli[:line_items].first.product) %></td>
+		<td><%= pli[:order_quantity] %></td>
+		<td><%= pli[:total_consumed] %></td>
+		<td><%= pli[:line_items].map{|i| i.quote_item.name + ": " + i.transit_state }.to_sentence %></td>
+		<%= render 'prof_cols', :li => pli, :mode => :aggregate %>
+	</tr>
+<% end %>
+</table>
+<h4>Labour</h4>
+<table>
+	<tr>
+		<th>Item Name</th>
+		<th>Max Quantity</th>
+		<th>Total Minutes</th>
+	</tr>
+<% @work_order.labour_aggregate.each do |key, lli| %>
+	<tr>
+		<td><%= lli[:item].name %></td>
+		<td><%= lli[:max_workers] %></td>
+		<td><%= lli[:total] %></td>		
+		<%= render 'prof_cols', :li => lli, :mode => :aggregate %>
+	</tr>
+<% end %>
+</table>
+<h4>Custom</h4>
+<% form ||= false %>
+<table id="custom_aggregate" class="aggregate">
+	<tr>
+		<th>Name</th>
+		<th>Quantity Consumed</th>
+		<th>Needed For</th>
+	</tr>
+<% @work_order.custom_aggregate.each do |key, cli| %>
+	<tr>
+		<td><%= cli[:custom_name] %></td>
+		<td><%= cli[:total_consumed] %></td>
+		<td><%= cli[:line_items].map{|i| i.quote_item.name + ": " + i.transit_state }.to_sentence %></td>
+		<%= render 'prof_cols', :li => cli, :mode => :aggregate %>
+	</tr>
+<% end %>
+</table>

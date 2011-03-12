@@ -1,0 +1,26 @@
+<h1>Product Ordering Aggregate</h1>
+
+<table>
+	<tr>
+		<th>Category</th>
+		<th>Product</th>
+		<th>Size</th>
+		<th>Dimension</th>
+		<th>Order Quantity</th>
+		<th>Ordered?</th>
+		<th>In Stock?</th>
+		<th>Needed For</th>
+	</tr>
+	<% @line_items.each do |key, pli| %>
+	<tr>
+		<td><%= pli[:product].category.name_with_parents %></td>
+		<td><%= pli[:product].name %></td>
+		<td><%= pli[:product_size].name %></td>
+		<td><%= pli[:dimension] %></td>
+		<td><%= pli[:order_quantity] %></td>
+		<td><%= pli[:ordered] %></td>
+		<td><%= pli[:in_stock] %></td>
+		<td><%= pli[:line_items].map{|x| link_to x.quote_item.quote.work_order.number, x.quote_item.quote.work_order }.to_sentence.html_safe %></td>
+	<tr>
+	<% end %>
+</table>

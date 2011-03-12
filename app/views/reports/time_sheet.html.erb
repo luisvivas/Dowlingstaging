@@ -1,0 +1,51 @@
+<h1>Time Sheet for <%= @user.name %></h1>
+<h4>Between <%= @start.to_s %> and <%= @end.to_s %></h4>
+
+<table class="bordered">
+	<tr>
+		<th>Date</th>
+		<th>Hours Worked</th>
+		<th>WO#</th>
+		<th>Item</th>
+		<th>Description</th>
+		<th>Hours</th>
+		<th>Shop/Field</th>
+		<th>Project</th>
+	</tr>
+	<% @reports.each do |date, info| %>
+	<% next unless info[:sum] > 0.0 %>
+	<% rows = time_sheet_rows(info) %>
+	<tr>
+		<td rowspan="<%= rows %>"><h3><%= date %></h3></td>
+		<td rowspan="<%= rows %>"><h3><%= info[:sum] %></h3></td>
+	<% info[:work_orders].each do |wo, items| %>
+	 	<td rowspan="<%= time_sheet_work_order_rows(items) %>"><%= wo %></td>
+	<% items.each do |qi, reports| %>
+	<% reports.each do |report| %>
+		<td><%= qi %> - <%= report.labour_line_item.description %></td>
+		<td><%= report.description %></td>
+		<td><%= report.hours_added %></td>
+		<td><%= report.labour_line_item.shop_text %></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<% end %>
+	<% end %>
+	<% end %>
+		<% info[:reports].reject{|x| !(x.extra_hours > 0) }.each do |eod| %>
+		<td> --- </td>
+		<td>Other</td>
+		<td><%= eod.hours_description %></td>
+		<td><%= eod.extra_hours %></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<% end %>
+	<% end %>
+	</tr>
+</table>
+
+<b>Total hours worked: <%= @total %></b>
+
+<%= render 'actions' %>

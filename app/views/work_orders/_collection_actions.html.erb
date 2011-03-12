@@ -1,0 +1,7 @@
+<div class="actions">
+	<%= permissioned_actions do |p|
+		p.link 'Show All', work_orders_path, :show, :work_order
+		p.link 'Work Order Queue', queue_work_orders_path, :show, :work_order_queue
+		p.link 'New Work Order', new_work_order_path, :create, :work_order
+	end %>
+</div>

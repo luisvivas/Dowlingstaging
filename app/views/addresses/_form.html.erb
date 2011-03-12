@@ -1,0 +1,24 @@
+<%= # The object this address is for is passed in as a local variable 'addressable' 
+f.fields_for :address, setup_address(addressable.address) do |a| %>
+  <div class="field required">
+    <%= a.label :street %><br />
+    <%= a.text_field :street1 %>
+    <%= a.text_field :street2 %>
+  </div>
+  <div class="field inrow required">
+    <%= a.label :city %><br />
+    <%= a.text_field :city %>
+  </div>
+  <div class="field required">
+    <%= a.label :zipcode, "Postal/Zip code" %><br />
+    <%= a.text_field :zipcode %>
+  </div>
+  <div class="field required">
+    <%= a.label :state, "Province/State" %><br />
+    <%= a.state_select :state, addressable.address.country, {} %>
+  </div>
+  <div class="field required">
+    <%= a.label :country, "Country" %><br />
+    <%= a.country_select :country, ["CA", "US"], {} %>
+  </div>
+<% end %>

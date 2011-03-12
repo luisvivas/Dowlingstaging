@@ -1,0 +1,23 @@
+<%= form_for(@quote, :html => {:class => "hide"}) do |f| %>
+	<% item = setup_quote_item(@quote.quote_items.build) 
+	   pli = setup_product_line_item(item.product_line_items.build)
+	   lli = setup_labour_line_item(item.labour_line_items.build)
+	   cli = setup_custom_line_item(item.custom_line_items.build) %>
+	<%= f.fields_for :quote_items, item, :child_index => "NEW_PARENT_RECORD" do |i| %>
+		<%= i.fields_for(:product_line_items, pli, {:child_index => "NEW_CHILD_RECORD"}) do |l| %>
+		<table id="product_line_item_form_template">
+			<%= render :partial => "product_line_items/line_item", :locals => {:l => l, :category_roots => category_roots} %>
+		</table>
+		<% end %>
+		<%= i.fields_for(:labour_line_items, lli, {:child_index => "NEW_CHILD_RECORD"}) do |l| %>
+		<table id="labour_line_item_form_template">
+			<%= render :partial => "labour_line_items/line_item", :locals => {:l => l} %>
+		</table>
+		<% end %>
+		<%= i.fields_for(:custom_line_items, cli, {:child_index => "NEW_CHILD_RECORD"}) do |l| %>
+		<table id="custom_line_item_form_template">
+			<%= render :partial => "custom_line_items/line_item", :locals => {:l => l} %>
+		</table>
+		<% end %>
+	<% end %>
+<% end %>

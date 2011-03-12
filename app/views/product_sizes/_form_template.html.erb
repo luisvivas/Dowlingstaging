@@ -1,0 +1,3 @@
+<%= form_for(setup_product(Product.new), :class=>"hide") do |f| %>
+<%= render :partial => 'product_sizes/form', :locals => {:f => f, :options => {:child_index => "NEW_RECORD"}}%>
+<% end %>

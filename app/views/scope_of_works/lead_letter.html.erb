@@ -1,0 +1,18 @@
+<h2>Lead Letter for <%= @scope.request_for_quote.job_name %></h2>
+<h4>To: <%= @scope.bidder.name %></h4>
+<h4>Date: <%= Time.now.to_s(:long_ordinal) %></h4>
+
+<p>This letter is to inform you that our company can supply the following:</p>
+<ul>
+  <% @scope.scope_items.each do |item| %>
+    <li><%= item.name %></li>
+  <% end %>
+</ul>
+
+<p>If you have any requests for revisions please do not hesitate to contact us. The quote is to follow shortly.<br>
+Kevin Dowling – Owner/President/Estimator<br>
+Dave Soutar – Estimator/Designer<br>
+<br>
+Regards, <br>
+Dijana Krstic / Office Assistant<br>
+</p>

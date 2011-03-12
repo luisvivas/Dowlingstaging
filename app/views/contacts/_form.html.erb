@@ -1,0 +1,59 @@
+<%= form_for(setup_addressable(@contact)) do |f| %>
+	<%= f.formatted_error_messages %>
+	<div class="pane">
+		<div class="field required">
+			<%= f.label :first_name %><br />
+			<%= f.text_field :first_name %>
+		</div>
+		<div class="field required">
+			<%= f.label :last_name %><br />
+			<%= f.text_field :last_name %>
+		</div>
+		
+		<div class="field">
+			<%= f.label :email %><br />
+			<%= f.text_field :email %>
+		</div>
+		
+		<div class="field inrow required">
+			<%= f.label :telephone %><br />
+			<%= f.text_field :telephone %>
+		</div>
+		<div class="field">
+			<%= f.label :department %><br />
+			<%= f.text_field :department %>
+		</div>
+		
+		<div class="field inrow">
+			<%= f.label :mobile_phone %><br />
+			<%= f.text_field :mobile %>
+		</div>
+		<div class="field">
+			<%= f.label :fax_number %><br />
+			<%= f.text_field :fax %>
+		</div>
+	 	<div class="field">
+			<%= f.label :bidder, "Can act as bidder?" %><br />
+			<%= f.check_box :bidder %>
+		</div>
+		<%= render 'addresses/form', :f => f, :addressable => @contact %>
+	</div>
+	
+	<div class="pane">
+		<%= f.text_field :business_id, :class => "hide" %>
+		
+		<div class="field span-9 last">
+			<%= f.label :business %><br />
+			<%= contact_business_autocomplete @contact %>
+		<div class="span-9 last small">Enter the name of a business to assign this contact to it</div>
+		</div>
+		
+		<div id="business_details" class="span-9 last">
+			<%= render 'businesses/show', :business => @contact.business unless @contact.business.nil? %>
+		</div>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

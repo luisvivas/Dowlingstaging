@@ -1,0 +1,21 @@
+@import partials/base
+
+body.bp.two-col
+	.container, #footer
+		+container
+	#header
+		+column($blueprint_grid_columns, true)
+	.sidebar
+		+column($sidebar_columns)
+	#content
+		// true means it's the last column in the row
+		+column($content_columns, true)
+		.window
+			+column($content_columns, true)
+		.pane
+			+column($content_columns / 2)
+			& + .pane
+				+column($content_columns / 2, true)
+			&.right
+				margin-right: -1px
+				float: right !important

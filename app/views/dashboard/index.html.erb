@@ -1,0 +1,27 @@
+<h6>Welcome, <%= current_user.best_identifier %></h6>
+<hr/>
+<div class="window">
+	<div class="window">
+		<%= best_calendar %>
+	</div>
+	<div class="pane overview">
+		<h3>RFQ Queue</h3>
+		<%= render :partial => "request_for_quotes/queue", :locals => {:rfqs => @rfqs} %>
+	</div>
+	<div class="pane overview">
+		<h3>Work Order Queue</h3>
+		<%= render :partial => "work_orders/queue", :locals => {:work_orders => @work_orders} %>
+	</div>
+	<div class="pane">
+		<h3>Recent Correspondence</h3>
+		<%= render :partial => "correspondences/recent", :locals => {:correspondences => @correspondences } %>
+	</div>
+	<div class="pane">
+		<h3>Recent Activity</h3>
+		<ul class="activity_list">
+		<% @feed.each do |f| %>
+			<li><%= feed_listing(f) %></li>
+		<% end %>
+		</ul>
+	</div>
+</div>

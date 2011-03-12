@@ -1,0 +1,14 @@
+<table class="custom_line_items line_items stripeMe">
+	<tr>
+		<th class="product">Custom Name</th>
+		<th class="real_order">Real Order Qty</th>
+		<th class="piece_cost">Cost / Piece</th>
+		<th class="markup">Markup</th>
+		<th class="total_cost">Calc Total Cost</th>
+		<th>&nbsp;</th>
+	</tr>
+<%= i.fields_for(:custom_line_items) do |l| %>
+	<%= render :partial => 'custom_line_items/line_item', :locals => {:l => l} %>
+<% end %>
+</table>
+<a href="#add-custom-line-item" class="ss_sprite ss_add add_custom_line_item">Add Custom</a>

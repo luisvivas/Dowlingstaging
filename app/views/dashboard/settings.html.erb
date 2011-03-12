@@ -1,0 +1,96 @@
+<h2>Settings</h2>
+
+<%= form_for Settings, :url => settings_path do |f| %>
+<div class="tabs">
+  <ul>
+    <li><a href="#markup">Currency and Markup</a></li>
+    <li><a href="#dimensions">Product Dimensions</a></li>
+    <li><a href="#google">Google Integration</a></li>
+    <li><a href="#other">Other</a></li>
+  </ul>
+  <div id="markup">
+    <div class="pane">
+      <div class="field inrow">
+        <%= f.label :labour_hourly_rate, 'Default Hourly Rate' %><br/>
+        <%= f.text_field :labour_hourly_rate, :class => "currency" %>
+      </div>
+      <div class="field inrow">
+        <%= f.label :product_markup, 'Default Material Line Item Markup' %><br/>
+        <%= f.text_field :product_markup %>%
+      </div>
+      <div class="field inrow">
+        <%= f.label :labour_markup, 'Default Labour Line Item Markup' %><br/>
+        <%= f.text_field :labour_markup %>%
+      </div>
+      <div class="field inrow">
+        <%= f.label :custom_markup, 'Default Custom Line Item Markup' %><br/>
+        <%= f.text_field :custom_markup %>%
+      </div>
+      <div class="field inrow">
+        <%= f.label :quote_item_hardware_markup, 'Default Quote Item Hardware Markup' %><br/>
+        <%= f.text_field :quote_item_hardware_markup %>%
+      </div>
+      <div class="field inrow">
+        <%= f.label :quote_item_markup, 'Default Quote Item Overall Markup' %><br/>
+        <%= f.text_field :quote_item_markup %>%
+      </div>
+      <div class="field ">
+        <%= f.label :quote_markup, 'Default Quote Markup' %><br/>
+        <%= f.text_field :quote_markup %>%
+      </div>
+
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div id="dimensions">
+    <div class="pane">
+      <div class="field">
+        <%= f.label :joined_length_product_dimensions, 'Length Product Dimensions' %><br/>
+        <%= f.text_area :joined_length_product_dimensions, :value => Settings.joined_length_product_dimensions %>
+      </div>
+      <div class="field">
+        <%= f.label :default_length_product_dimension, 'Default Length Product Dimension' %><br/>
+        <%= f.text_field :default_length_product_dimension %>
+      </div>
+      <div class="field">
+        <%= f.label :joined_sheet_product_dimensions, 'Sheet Product Dimensions' %><br/>
+        <%= f.text_area :joined_sheet_product_dimensions, :value => Settings.joined_sheet_product_dimensions %>
+      </div>
+      <div class="field">
+        <%= f.label :default_sheet_product_dimension, 'Default Sheet Product Dimension' %><br/>
+        <%= f.text_field :default_sheet_product_dimension %>
+      </div>
+
+      <hr/>
+      <div class="field">
+        <%= f.label :joined_available_grades, 'Extra: Product Grades' %><br/>
+        <%= f.text_area :joined_available_grades, :value => Settings.joined_available_grades %>
+      </div>
+      <div class="field">
+        <%= f.label :joined_available_finishes, 'Extra: Product Finishes' %><br/>
+        <%= f.text_area :joined_available_finishes, :value => Settings.joined_available_finishes %>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div id="google">
+    <div class="pane">
+      <div class="field">
+        <%= f.label :google_domain, 'Google Apps Domain' %><br/>
+        <%= f.text_field :google_domain %>
+      </div>
+      <div class="field">
+        <%= f.label :calendar_id, 'Google Calendar ID' %><br/>
+        <%= f.text_field :calendar_id %>%
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div id="other">
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="actions">
+  <%= f.submit "Update Settings" %>
+</div>
+<%end %>

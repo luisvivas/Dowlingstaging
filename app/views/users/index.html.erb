@@ -1,0 +1,13 @@
+<h1>Users</h1>
+
+<% content_for :head do %>
+	<%= raw user_index_grid %>
+<% end %>
+
+<table id="users_grid"></table>
+<div id="users_grid_pager"></div>
+
+<br />
+<div class="actions">
+<%= link_to 'New User', new_user_path %>
+</div>

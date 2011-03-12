@@ -1,0 +1,11 @@
+<h1>Businesses</h1>
+
+
+<% content_for :head do %>
+	<%= raw business_index_grid %>
+<% end %>
+
+<table id="businesses_grid"></table>
+<div id="businesses_grid_pager"></div>
+
+<%= render 'businesses/collection_actions' %>

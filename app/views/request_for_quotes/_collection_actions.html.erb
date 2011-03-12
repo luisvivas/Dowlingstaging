@@ -1,0 +1,6 @@
+<div class="actions">
+	<%= permissioned_actions do |p|
+		p.link 'Show All', request_for_quotes_path, :show, :request_for_quote
+		p.link 'New Request For Quote', new_request_for_quote_path, :create, :request_for_quote
+	end %>
+</div>

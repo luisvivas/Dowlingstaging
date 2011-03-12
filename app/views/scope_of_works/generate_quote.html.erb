@@ -1,0 +1,28 @@
+<h1>Generate Quote for <%= @scope.request_for_quote.job_name %> for <%= @scope.bidder.name %></h1>
+<div class="pane">
+	<h2>Scope Items</h2>
+	<ul>
+		<% @scope.scope_items.each do |item| %>
+		<li><%= item.name %></li>
+		<% end %>
+	</ul>
+</div>
+<div class="pane">
+	<h2>Scope Notes</h2>
+	<p><%= @scope.notes %></p>
+</div>
+<hr>
+<h3>Generation Options</h3>
+<ul>
+	<li><%= link_to "Generate new Quote from Scope for #{@scope.bidder.name}", generate_new_quote_request_for_quote_scope_of_work_path(@scope.request_for_quote, @scope) %></li>
+<% @quotes.each do |q| %>
+	<li><%= link_to "Duplicate #{q.number} which is for #{q.contactable.name}", duplicate_quote_request_for_quote_scope_of_work_path(@scope.request_for_quote, @scope, :quote_id => q.id) %>. Has <%= q.quote_items.present? ? q.quote_items.map(&:name).to_sentence : "no" %> quote items.</li>
+<% end %>
+	<li>Duplicate a different quote: 
+		<%= form_for(Quote.new, :url => duplicate_quote_request_for_quote_scope_of_work_path(@scope.request_for_quote, @scope), :html => {:method => :get}) do |f| %> 
+		<%= f.hidden_field :id %>
+		<%= quote_autocomplete %>
+		<%= f.submit %>
+		<% end %>
+	</li>
+</ul>

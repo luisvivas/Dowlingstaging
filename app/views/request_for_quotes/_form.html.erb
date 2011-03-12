@@ -1,0 +1,67 @@
+<% unless @request_for_quote.new_record? %>
+<div class="pane right">
+	<h2>Bidders</h2>
+	<ul>
+		<% @request_for_quote.scope_of_works.each do |scope| %>
+			<li>
+			<%= link_to scope.bidder.name, scope.bidder %> 
+			<%= link_to 'remove', request_for_quote_scope_of_work_path(@request_for_quote, scope), :method => :delete, 
+			:confirm => "Are you sure you wish to remove this bidder and scope of work?", 
+			:class => "small" %>
+			</li>
+		<% end %>
+	</ul>
+	<%= render :partial => "scope_of_works/form", :locals => {:scope => @request_for_quote.scope_of_works.new, :request => @request_for_quote} %>
+
+	<h2>Job Resources</h2>
+	<%= render :partial => "job_resources/widget", :locals => {:attachable => @request_for_quote, :form => true } %>
+</div>
+<% end %>
+<%= form_for(@request_for_quote) do |f| %>
+	<%= f.formatted_error_messages %>
+	<div class="pane">
+  		<div class="field">
+			<%= f.label :job_name %><br />
+			<%= f.text_field :job_name %>
+		</div>
+		<div class="field inrow">
+			<%= f.label :category %><br />
+			<%= f.text_field :category %>
+		</div>
+		<div class="field inrow">
+			<%= f.label :shred, "SHRED Eligibility" %><br />
+			<%= f.check_box :shred %>
+		</div>
+		<div class="field">
+			<%= f.label :site_visit, "Site Visit Necessary" %><br />
+			<%= f.check_box :site_visit %>
+		</div>
+		<div class="field fullrow">
+			<%= f.label :due_date %><br />
+			<%= datetime_select "request_for_quote", "due_date", :default => 10.days.from_now.change(:hour => 17) %>
+		</div>
+		<div class="field">
+			<%= f.label :bidding, "Bidding" %><br />
+			<%= f.check_box :bidding %>
+		</div>
+		<div class="field">
+			<%= f.label :notes %><br />
+			<%= f.text_area :notes, :rows => 0, :cols => 0 %>
+		</div>
+	</div>
+	<hr/>
+	<% unless @request_for_quote.new_record? %>
+	<div class="window" id="scope_list">
+		<h2>Scopes of Work</h2>
+		<% if @request_for_quote.scope_of_works.present? %>
+			<%= render :partial => 'scope_of_works/bid_form', :locals => {:f => f} %>
+		<% else %>
+			<p>Add a bidder above to start editing the scopes of work.</p>
+		<% end %>
+	</div>
+	<% end %>
+	<div class="actions">
+		<%= f.submit %>
+	</div>	
+<% end %>
+<%= render :partial => 'scope_items/form_template', :locals => {:request_for_quote => @request_for_quote} %>
